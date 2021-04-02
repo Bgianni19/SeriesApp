@@ -4,7 +4,6 @@ import {
   Grid,
   Card,
   CardActionArea,
-  CircularProgress,
   CardMedia,
   CardContent,
   CardActions,
@@ -13,28 +12,16 @@ import {
 
 const BookCard = ({ data }) => {
   const classes = useStylesBC();
+
   return (
     <Grid item xs={12} sm={6} md={4}>
-      <Card className={classes.root}>
+      <Card className={classes.card}>
         <CardActionArea disableRipple>
-          {data.loading ? (
-            <Grid
-              container
-              xs={12}
-              justify="center"
-              alignItems="center"
-              className={classes.image}
-            >
-              <CircularProgress color="primary" />
-            </Grid>
-          ) : (
-            <CardMedia
-              className={classes.image}
-              image={data.image}
-              title={data.title}
-            />
-          )}
-
+          <CardMedia
+            className={classes.image}
+            image={data.image ? data.image.original : null}
+            title={data.name}
+          />
           <CardContent>
             <BookCardData data={data} />
           </CardContent>

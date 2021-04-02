@@ -1,49 +1,36 @@
+import { useStylesABC } from "./styles";
 import { useState, useEffect } from "react";
 import BookCard from "./BookCard";
 import { Grid } from "@material-ui/core";
 
-const AllBookCards = () => {
-  const [Title, setTitle] = useState(null);
-  const [Author, setAuthor] = useState(null);
-  const [Year, setYear] = useState(null);
-  const [Price, setPrice] = useState(null);
-  const [Image, setImage] = useState(null);
-  const [Loading, setLoading] = useState(true);
-  const [Id, setId] = useState(null);
+const AllBookCards = ({ handleSearch }) => {
+  const classes = useStylesABC();
+
+  const [search, setSearch] = useState("");
+  const [bookCard, setBookCards] = useState([]);
+
+  useEffect(() => {
+    const handleContentChange = () => {
+      setSearch(handleSearch);
+    };
+    handleContentChange();
+  }, [handleSearch]);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch("");
+      const response = await fetch(
+        `http://api.tvmaze.com/search/shows?q=${search}`
+      );
       const data = await response.json();
-      const item = data[0];
-      setTitle(item.show.name);
-      setAuthor(item.show.network.name);
-      setYear(item.show.premiered);
-      setPrice();
-      setImage(item.show.image.original);
-      setLoading(false);
-      setId(item.show.id);
+      setBookCards(data);
     }
     fetchData();
-  }, []);
-
-  const bookcards = [];
-  for (let card = 0; card < 15; card++) {
-    bookcards[card] = {
-      title: Title,
-      author: Author,
-      year: Year,
-      price: Price,
-      image: Image,
-      loading: Loading,
-      id: Id,
-    };
-  }
+  }, [search]);
 
   return (
-    <Grid container alignItems="center" spacing={4}>
-      {bookcards.map((bookcards) => (
-        <BookCard key={bookcards.id} data={bookcards} />
+    <Grid className={classes.root} container alignItems="center" spacing={4}>
+      {bookCard.map((bookcard) => (
+        <BookCard key={bookcard.show.id} data={bookcard.show} />
       ))}
     </Grid>
   );

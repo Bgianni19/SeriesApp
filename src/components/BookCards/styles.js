@@ -1,17 +1,23 @@
 import { makeStyles } from "@material-ui/core";
 import { red, grey } from "@material-ui/core/colors";
 
-export const useStylesBC = makeStyles((theme) => ({
+export const useStylesABC = makeStyles((theme) => ({
   root: {
+    backgroundColor: theme.palette.AppBackgroundColor,
+  },
+}));
+
+export const useStylesBC = makeStyles((theme) => ({
+  card: {
     width: 300,
-    overflow: "initial",
+    overflow: "hidden",
     margin: "auto",
-    backgroundColor: theme.palette.BackgroundColor,
+    backgroundColor: theme.palette.CardBackgroundColor,
     borderRadius: 2,
     boxShadow: "none",
   },
   image: {
-    height: 380,
+    height: 440,
   },
   button: {
     color: grey[100],
@@ -21,7 +27,7 @@ export const useStylesBC = makeStyles((theme) => ({
 }));
 
 export const useStylesBCD = makeStyles((theme) => ({
-  name: {
+  dataTitle: {
     width: "30%",
     borderBlockColor: red[500],
     color: theme.palette.FontColor,

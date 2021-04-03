@@ -1,22 +1,23 @@
-import { useState } from "react";
-import "./App.css";
-import { ThemeProvider, Switch } from "@material-ui/core";
-import defaultTheme from "./themes/defaultTheme";
-import darkTheme from "./themes/darkTheme";
-import NavBar from "./components/NavBar/NavBar";
-import Search from "./components/SearchBox/Search";
-import AllBookCards from "./components/BookCards/AllBookCards";
+import { useState } from 'react';
+import './App.css';
+import { ThemeProvider, Switch } from '@material-ui/core';
+import defaultTheme from './themes/defaultTheme';
+import darkTheme from './themes/darkTheme';
+import NavBar from './components/NavBar/NavBar';
+// import Search from "./components/SearchBox/Search";
+import Search from './components/SearchBox/SearchAlt';
+import AllBookCards from './components/BookCards/AllBookCards';
 
 function App() {
   const [theme, setTheme] = useState(defaultTheme);
-  const [searchInput, setSearchInput] = useState("");
+  const [searchInput, setSearchInput] = useState('');
 
   return (
     <ThemeProvider theme={theme}>
       <NavBar />
       <Search handleInput={(Input) => setSearchInput(Input)}>
         <Switch
-          color="primary"
+          color='primary'
           onClick={(event) =>
             event.target.checked ? setTheme(darkTheme) : setTheme(defaultTheme)
           }

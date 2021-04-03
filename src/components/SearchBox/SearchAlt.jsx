@@ -1,11 +1,11 @@
-import { useStylesS, SearchInput } from './styles';
-import { useState } from 'react';
-import { Grid, Button } from '@material-ui/core';
+import { useStylesS, SearchInput } from "./styles";
+import { useState } from "react";
+import { Grid, Button } from "@material-ui/core";
 
 const Search = (props) => {
   const classes = useStylesS();
 
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,8 +19,8 @@ const Search = (props) => {
         container
         item
         xs={8}
-        justify='center'
-        component='form'
+        justify="center"
+        component="form"
         onSubmit={handleSubmit}
       >
         <Grid item>
@@ -28,11 +28,11 @@ const Search = (props) => {
             onChange={(event) => {
               setInput(event.target.value);
             }}
-            placeholder='Search'
+            placeholder="Search"
           />
         </Grid>
         <Grid item>
-          <Button className={classes.button} id='SearchButton' type='submit'>
+          <Button className={classes.button} type="submit">
             Search
           </Button>
         </Grid>

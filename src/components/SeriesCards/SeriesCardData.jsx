@@ -1,8 +1,8 @@
-import { useStylesBCD } from "./styles";
+import { useStylesSCD } from "./styles";
 import { Table, TableBody, TableRow, TableCell } from "@material-ui/core";
 
-const BookCardData = ({ data }) => {
-  const classes = useStylesBCD();
+const SeriesCardData = ({ data }) => {
+  const classes = useStylesSCD();
 
   const { name, network, premiered, rating } = data;
 
@@ -27,7 +27,7 @@ const BookCardData = ({ data }) => {
             align="right"
             scope="row"
           >
-            Author
+            Network
           </TableCell>
           <TableCell className={classes.data}>
             {network ? network.name : "-"}
@@ -40,7 +40,7 @@ const BookCardData = ({ data }) => {
             align="right"
             scope="row"
           >
-            Year
+            Premiered
           </TableCell>
           <TableCell className={classes.data}>
             {premiered ? premiered : "-"}
@@ -53,7 +53,7 @@ const BookCardData = ({ data }) => {
             align="right"
             scope="row"
           >
-            Price
+            Rating
           </TableCell>
           <TableCell className={classes.data}>
             {rating.average ? rating.average : "-"}
@@ -64,4 +64,4 @@ const BookCardData = ({ data }) => {
   );
 };
 
-export default BookCardData;
+export default SeriesCardData;

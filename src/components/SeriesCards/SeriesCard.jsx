@@ -1,5 +1,5 @@
-import { useStylesBC } from "./styles";
-import BookCardData from "./BookCardData";
+import { useStylesSC } from "./styles";
+import SeriesCardData from "./SeriesCardData";
 import {
   Grid,
   Card,
@@ -10,8 +10,8 @@ import {
   Button,
 } from "@material-ui/core";
 
-const BookCard = ({ data }) => {
-  const classes = useStylesBC();
+const SeriesCard = ({ data }) => {
+  const classes = useStylesSC();
 
   return (
     <Grid item xs={12} sm={6} md={4}>
@@ -23,7 +23,7 @@ const BookCard = ({ data }) => {
             title={data.name}
           />
           <CardContent>
-            <BookCardData data={data} />
+            <SeriesCardData data={data} />
           </CardContent>
         </CardActionArea>
         <CardActions>
@@ -51,4 +51,4 @@ const BookCard = ({ data }) => {
   );
 };
 
-export default BookCard;
+export default SeriesCard;

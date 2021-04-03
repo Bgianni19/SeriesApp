@@ -6,7 +6,7 @@ import darkTheme from "./themes/darkTheme";
 import NavBar from "./components/NavBar/NavBar";
 // import Search from "./components/SearchBox/Search";
 import Search from "./components/SearchBox/SearchAlt";
-import AllBookCards from "./components/BookCards/AllBookCards";
+import AllSeriesCards from "./components/SeriesCards/AllSeriesCards";
 
 function App() {
   const [theme, setTheme] = useState(defaultTheme);
@@ -23,7 +23,7 @@ function App() {
           }
         />
       </Search>
-      <AllBookCards handleSearch={searchInput} />
+      <AllSeriesCards handleSearch={searchInput} />
     </ThemeProvider>
   );
 }

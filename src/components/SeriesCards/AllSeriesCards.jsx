@@ -1,13 +1,13 @@
-import { useStylesABC } from "./styles";
+import { useStylesASC } from "./styles";
 import { useState, useEffect } from "react";
-import BookCard from "./BookCard";
+import SeriesCard from "./SeriesCard";
 import { Grid } from "@material-ui/core";
 
-const AllBookCards = ({ handleSearch }) => {
-  const classes = useStylesABC();
+const AllSeriesCards = ({ handleSearch }) => {
+  const classes = useStylesASC();
 
   const [search, setSearch] = useState("");
-  const [bookCard, setBookCards] = useState([]);
+  const [seriesCard, setSeriesCards] = useState([]);
 
   useEffect(() => {
     const handleContentChange = () => {
@@ -22,18 +22,18 @@ const AllBookCards = ({ handleSearch }) => {
         `http://api.tvmaze.com/search/shows?q=${search}`
       );
       const data = await response.json();
-      setBookCards(data);
+      setSeriesCards(data);
     }
     fetchData();
   }, [search]);
 
   return (
     <Grid className={classes.root} container alignItems="center" spacing={4}>
-      {bookCard.map((bookcard) => (
-        <BookCard key={bookcard.show.id} data={bookcard.show} />
+      {seriesCard.map((seriesCard) => (
+        <SeriesCard key={seriesCard.show.id} data={seriesCard.show} />
       ))}
     </Grid>
   );
 };
 
-export default AllBookCards;
+export default AllSeriesCards;

@@ -8,7 +8,7 @@ const NavBar = (props) => {
     <AppBar className={classes.root}>
       <Toolbar className={classes.toolbar}>
         <Typography className={classes.title} variant="h5">
-          Book App
+          Series App
         </Typography>
         {props.children}
       </Toolbar>

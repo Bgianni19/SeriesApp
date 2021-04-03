@@ -1,6 +1,6 @@
 {
-  "short_name": "Book App",
-  "name": "Book App",
+  "short_name": "Series App",
+  "name": "Series App",
   "start_url": ".",
   "display": "standalone"
 }

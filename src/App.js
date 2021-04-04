@@ -23,7 +23,7 @@ function App() {
           }
         />
       </Search>
-      <AllSeriesCards handleSearch={searchInput} />
+      <AllSeriesCards input={searchInput} />
     </ThemeProvider>
   );
 }

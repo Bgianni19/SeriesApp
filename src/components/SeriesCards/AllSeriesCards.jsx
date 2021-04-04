@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import SeriesCard from "./SeriesCard";
 import { Grid } from "@material-ui/core";
 
-const AllSeriesCards = ({ handleSearch }) => {
+const AllSeriesCards = ({ input }) => {
   const classes = useStylesASC();
 
   const [search, setSearch] = useState("");
@@ -11,10 +11,10 @@ const AllSeriesCards = ({ handleSearch }) => {
 
   useEffect(() => {
     const handleContentChange = () => {
-      setSearch(handleSearch);
+      setSearch(input);
     };
     handleContentChange();
-  }, [handleSearch]);
+  }, [input]);
 
   useEffect(() => {
     async function fetchData() {
@@ -28,9 +28,9 @@ const AllSeriesCards = ({ handleSearch }) => {
   }, [search]);
 
   return (
-    <Grid className={classes.root} container alignItems="center" spacing={4}>
-      {seriesCard.map((seriesCard) => (
-        <SeriesCard key={seriesCard.show.id} data={seriesCard.show} />
+    <Grid className={classes.root} container alignItems="center">
+      {seriesCard.map(({ show }) => (
+        <SeriesCard key={show.id} data={show} />
       ))}
     </Grid>
   );

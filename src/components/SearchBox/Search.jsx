@@ -2,15 +2,14 @@ import { useStylesS, SearchInput } from "./styles";
 import { useState } from "react";
 import { Grid, Button } from "@material-ui/core";
 
-const Search = (props) => {
+const Search = ({ handleInput, children }) => {
   const classes = useStylesS();
 
   const [input, setInput] = useState("");
 
   return (
     <Grid className={classes.root} container>
-      <Grid item xs={2} />
-      <Grid item xs={8} container justify="center">
+      <Grid item xs={10} container justify="center">
         <Grid item>
           <SearchInput
             onChange={(event) => {
@@ -28,14 +27,14 @@ const Search = (props) => {
           <Button
             className={classes.button}
             id="SearchButton"
-            onClick={() => props.handleInput(input)}
+            onClick={() => handleInput(input)}
           >
             Search
           </Button>
         </Grid>
       </Grid>
       <Grid item xs={2}>
-        {props.children}
+        {children}
       </Grid>
     </Grid>
   );

@@ -12,6 +12,7 @@ export const useStylesSC = makeStyles((theme) => ({
     width: 300,
     overflow: "hidden",
     margin: "auto",
+    marginBottom: theme.spacing(4),
     backgroundColor: theme.palette.CardBackgroundColor,
     borderRadius: 2,
     boxShadow: "none",

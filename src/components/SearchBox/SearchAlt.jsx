@@ -2,23 +2,22 @@ import { useStylesS, SearchInput } from "./styles";
 import { useState } from "react";
 import { Grid, Button } from "@material-ui/core";
 
-const Search = (props) => {
+const Search = ({ handleInput, children }) => {
   const classes = useStylesS();
 
   const [input, setInput] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    props.handleInput(input);
+    handleInput(input);
   };
 
   return (
     <Grid className={classes.root} container>
-      <Grid item xs={2} />
       <Grid
         container
         item
-        xs={8}
+        xs={10}
         justify="center"
         component="form"
         onSubmit={handleSubmit}
@@ -38,7 +37,7 @@ const Search = (props) => {
         </Grid>
       </Grid>
       <Grid item xs={2}>
-        {props.children}
+        {children}
       </Grid>
     </Grid>
   );

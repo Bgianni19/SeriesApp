@@ -10,7 +10,6 @@ const NavBar = (props) => {
         <Typography className={classes.title} variant="h5">
           Series App
         </Typography>
-        {props.children}
       </Toolbar>
     </AppBar>
   );

@@ -1,7 +1,7 @@
 import { useStylesNB } from "./styles";
 import { AppBar, Toolbar, Typography } from "@material-ui/core";
 
-const NavBar = (props) => {
+const NavBar = () => {
   const classes = useStylesNB();
 
   return (

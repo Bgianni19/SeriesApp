@@ -1,43 +1,60 @@
 import { useStylesS, SearchInput } from "./styles";
-import { useState } from "react";
-import { Grid, Button } from "@material-ui/core";
+import { connect, useDispatch } from "react-redux";
+import { Grid, Button, Switch } from "@material-ui/core";
 
-const Search = ({ handleInput, children }) => {
+const Search = ({ children }) => {
   const classes = useStylesS();
 
-  const [input, setInput] = useState("");
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch({ type: "GetInputValue" });
+  };
 
   return (
     <Grid className={classes.root} container>
-      <Grid item xs={10} container justify="center">
+      <Grid
+        container
+        item
+        xs={10}
+        justify="center"
+        component="form"
+        onSubmit={handleSubmit}
+      >
         <Grid item>
           <SearchInput
             onChange={(event) => {
-              setInput(event.target.value);
+              dispatch({
+                type: "GetInputValueOnChange",
+                payload: { inputValueOnChange: event.target.value },
+              });
             }}
-            onKeyDown={(event) =>
-              event.keyCode === 13
-                ? document.getElementById("SearchButton").click()
-                : null
-            }
             placeholder="Search"
           />
         </Grid>
         <Grid item>
-          <Button
-            className={classes.button}
-            id="SearchButton"
-            onClick={() => handleInput(input)}
-          >
+          <Button className={classes.button} type="submit">
             Search
           </Button>
         </Grid>
       </Grid>
       <Grid item xs={2}>
-        {children}
+        <Switch
+          color="primary"
+          onClick={(event) =>
+            event.target.checked
+              ? dispatch({
+                  type: "SetDarkTheme",
+                })
+              : dispatch({
+                  type: "SetDefaultTheme",
+                })
+          }
+        />
       </Grid>
     </Grid>
   );
 };
 
-export default Search;
+export default connect()(Search);

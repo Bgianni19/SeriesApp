@@ -1,31 +1,21 @@
-import { useState } from "react";
 import "./App.css";
-import { ThemeProvider, Switch } from "@material-ui/core";
-import defaultTheme from "./themes/defaultTheme";
-import darkTheme from "./themes/darkTheme";
+import store from "./store";
+import { connect } from "react-redux";
+import { ThemeProvider } from "@material-ui/core";
 import NavBar from "./components/NavBar/NavBar";
-// import Search from "./components/SearchBox/Search";
-import Search from "./components/SearchBox/SearchAlt";
+import Search from "./components/SearchBox/Search";
 import AllSeriesCards from "./components/SeriesCards/AllSeriesCards";
 
 function App() {
-  const [theme, setTheme] = useState(defaultTheme);
-  const [searchInput, setSearchInput] = useState("");
+  const themeState = store.getState().themeReducer;
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeState.theme}>
       <NavBar />
-      <Search handleInput={(input) => setSearchInput(input)}>
-        <Switch
-          color="primary"
-          onClick={(event) =>
-            event.target.checked ? setTheme(darkTheme) : setTheme(defaultTheme)
-          }
-        />
-      </Search>
-      <AllSeriesCards input={searchInput} />
+      <Search />
+      <AllSeriesCards />
     </ThemeProvider>
   );
 }
 
-export default App;
+export default connect()(App);

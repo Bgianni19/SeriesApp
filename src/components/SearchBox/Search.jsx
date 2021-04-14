@@ -2,7 +2,7 @@ import { useStylesS, SearchInput } from "./styles";
 import { useDispatch } from "react-redux";
 import { Grid, Button, Switch } from "@material-ui/core";
 
-const Search = ({ children }) => {
+const Search = () => {
   const classes = useStylesS();
 
   const dispatch = useDispatch();

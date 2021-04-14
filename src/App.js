@@ -1,16 +1,15 @@
 import "./App.css";
-import store from "./store";
-import { connect } from "react-redux";
+import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
 import NavBar from "./components/NavBar/NavBar";
 import Search from "./components/SearchBox/Search";
 import AllSeriesCards from "./components/SeriesCards/AllSeriesCards";
 
 function App() {
-  const themeState = store.getState().themeReducer;
+  const theme = useSelector((state) => state.themeReducer.theme);
 
   return (
-    <ThemeProvider theme={themeState.theme}>
+    <ThemeProvider theme={theme}>
       <NavBar />
       <Search />
       <AllSeriesCards />
@@ -18,4 +17,4 @@ function App() {
   );
 }
 
-export default connect()(App);
+export default App;

@@ -19,7 +19,7 @@ const SeriesCard = ({ data }) => {
         <CardActionArea disableRipple>
           <CardMedia
             className={classes.image}
-            image={data.image ? data.image.original : null}
+            image={data.image ? data.image.original : "./"}
             title={data.name}
           />
           <CardContent>

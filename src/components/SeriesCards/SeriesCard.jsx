@@ -1,5 +1,4 @@
 import { useStylesSC } from "./styles";
-import SeriesCardData from "./SeriesCardData";
 import {
   Grid,
   Card,
@@ -9,6 +8,7 @@ import {
   CardActions,
   Button,
 } from "@material-ui/core";
+import SeriesCardData from "./SeriesCardData";
 
 const SeriesCard = ({ data }) => {
   const classes = useStylesSC();

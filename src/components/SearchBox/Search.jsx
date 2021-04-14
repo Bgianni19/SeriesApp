@@ -1,5 +1,5 @@
 import { useStylesS, SearchInput } from "./styles";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Grid, Button, Switch } from "@material-ui/core";
 
 const Search = ({ children }) => {
@@ -57,4 +57,4 @@ const Search = ({ children }) => {
   );
 };
 
-export default connect()(Search);
+export default Search;

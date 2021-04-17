@@ -1,16 +1,13 @@
 const initialState = { inputOnChange: "", input: "" };
 
 const searchReducer = (state = initialState, action) => {
-  const newState = { ...state };
   switch (action.type) {
     case "GetInputValueOnChange":
-      newState.inputOnChange = action.payload.inputValueOnChange;
-      return newState;
+      return { ...state, inputOnChange: action.payload.inputValueOnChange };
     case "GetInputValue":
-      newState.input = newState.inputOnChange;
-      return newState;
+      return { ...state, input: state.inputOnChange };
     default:
-      return newState;
+      return state;
   }
 };
 

@@ -4,16 +4,13 @@ import darkTheme from "../themes/darkTheme";
 const initialState = { theme: defaultTheme };
 
 const themeReducer = (state = initialState, action) => {
-  const newState = { ...state };
   switch (action.type) {
     case "SetDefaultTheme":
-      newState.theme = defaultTheme;
-      return newState;
+      return { ...state, theme: defaultTheme };
     case "SetDarkTheme":
-      newState.theme = darkTheme;
-      return newState;
+      return { ...state, theme: darkTheme };
     default:
-      return newState;
+      return state;
   }
 };
 

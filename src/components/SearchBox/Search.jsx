@@ -1,6 +1,7 @@
 import { useStylesS, SearchInput } from "./styles";
 import { useDispatch } from "react-redux";
 import { Grid, Button, Switch } from "@material-ui/core";
+import darkTheme from "../../themes/darkTheme";
 
 const Search = () => {
   const classes = useStylesS();
@@ -46,6 +47,7 @@ const Search = () => {
             event.target.checked
               ? dispatch({
                   type: "SetDarkTheme",
+                  payload: { theme: darkTheme },
                 })
               : dispatch({
                   type: "SetDefaultTheme",

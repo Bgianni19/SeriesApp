@@ -1,12 +1,28 @@
+import { useEffect, useState } from "react";
 import "./App.css";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
 import NavBar from "./components/NavBar/NavBar";
 import Search from "./components/SearchBox/Search";
 import AllSeriesCards from "./components/SeriesCards/AllSeriesCards";
+import defaultTheme from "./themes/defaultTheme";
+import darkTheme from "./themes/darkTheme";
+import { DEFAULT_THEME, DARK_THEME } from "./themes/themeTypes";
 
 function App() {
-  const { theme } = useSelector((state) => state.themeReducer);
+  const { theme: reducerTheme } = useSelector((state) => state.themeReducer);
+  const [theme, setTheme] = useState(reducerTheme);
+
+  useEffect(() => {
+    switch (reducerTheme) {
+      case DEFAULT_THEME:
+        return setTheme(defaultTheme);
+      case DARK_THEME:
+        return setTheme(darkTheme);
+      default:
+        setTheme(defaultTheme);
+    }
+  }, [reducerTheme]);
 
   return (
     <ThemeProvider theme={theme}>

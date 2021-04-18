@@ -1,4 +1,5 @@
 // theme //
+export const SET_THEME = "SET_THEME";
 export const SET_DEFAULT_THEME = "setDefaultTheme";
 export const SET_DARK_THEME = "setDarkTheme";
 // theme //

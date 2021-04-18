@@ -1,10 +1,6 @@
 import { useStylesS, SearchInput } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setDefaultTheme,
-  setDarkTheme,
-  setTheme,
-} from "../../actions/themeActions";
+import { setThemeState } from "../../actions/themeActions";
 import { setSearchState } from "../../actions/searchActions";
 import { Grid, Button, Switch } from "@material-ui/core";
 import { DEFAULT_THEME, DARK_THEME } from "../../themes/themeTypes";
@@ -49,8 +45,8 @@ const Search = () => {
           color="primary"
           onClick={(event) =>
             event.target.checked
-              ? dispatch(setTheme(DARK_THEME))
-              : dispatch(setTheme(DEFAULT_THEME))
+              ? dispatch(setThemeState(DARK_THEME))
+              : dispatch(setThemeState(DEFAULT_THEME))
           }
         />
       </Grid>

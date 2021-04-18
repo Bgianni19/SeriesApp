@@ -1,15 +1,6 @@
-import { SET_THEME, SET_DEFAULT_THEME, SET_DARK_THEME } from "./types";
+import { SET_THEME_STATE } from "./types";
 
-export const setDefaultTheme = () => ({
-  type: SET_DEFAULT_THEME,
-});
-
-export const setDarkTheme = (payload) => ({
-  type: SET_DARK_THEME,
-  payload,
-});
-
-export const setTheme = (payload) => ({
-  type: SET_THEME,
+export const setThemeState = (payload) => ({
+  type: SET_THEME_STATE,
   payload,
 });

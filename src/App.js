@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import "./App.css";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
 import NavBar from "./components/NavBar/NavBar";
@@ -10,11 +9,11 @@ import darkTheme from "./themes/darkTheme";
 import { DEFAULT_THEME, DARK_THEME } from "./themes/themeTypes";
 
 function App() {
-  const { theme: reducerTheme } = useSelector((state) => state.themeReducer);
-  const [theme, setTheme] = useState(reducerTheme);
+  const { theme: newTheme } = useSelector((state) => state.themeReducer);
+  const [theme, setTheme] = useState(newTheme);
 
   useEffect(() => {
-    switch (reducerTheme) {
+    switch (newTheme) {
       case DEFAULT_THEME:
         return setTheme(defaultTheme);
       case DARK_THEME:
@@ -22,7 +21,7 @@ function App() {
       default:
         setTheme(defaultTheme);
     }
-  }, [reducerTheme]);
+  }, [newTheme]);
 
   return (
     <ThemeProvider theme={theme}>

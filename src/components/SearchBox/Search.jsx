@@ -1,20 +1,18 @@
-import { useStylesS, SearchInput } from './styles';
-import { useDispatch } from 'react-redux';
-import { Grid, Button, Switch } from '@material-ui/core';
-import darkTheme from '../../themes/darkTheme';
-import {
-  getInputValueOnChange,
-  setSearchState,
-} from '../../actions/searchActions';
+import { useStylesS, SearchInput } from "./styles";
+import { useDispatch, useSelector } from "react-redux";
+import { setDefaultTheme, setDarkTheme } from "../../actions/themeActions";
+import { setSearchState } from "../../actions/searchActions";
+import { Grid, Button, Switch } from "@material-ui/core";
 
 const Search = () => {
   const classes = useStylesS();
 
   const dispatch = useDispatch();
+  const { inputOnChange } = useSelector((state) => state.searchReducer);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch({ type: 'GetInputValue' });
+    dispatch(setSearchState({ input: inputOnChange }));
   };
 
   return (
@@ -23,43 +21,31 @@ const Search = () => {
         container
         item
         xs={10}
-        justify='center'
-        component='form'
+        justify="center"
+        component="form"
         onSubmit={handleSubmit}
       >
         <Grid item>
           <SearchInput
             onChange={(event) => {
-              dispatch(
-                setSearchState({ inputValueOnChange: event.target.value })
-              );
-              // dispatch(getInputValueOnChange({ inputValueOnChange: event.target.value }));
-              // dispatch({
-              //   type: "GetInputValueOnChange",
-              //   payload: { inputValueOnChange: event.target.value },
-              // });
+              dispatch(setSearchState({ inputOnChange: event.target.value }));
             }}
-            placeholder='Search'
+            placeholder="Search"
           />
         </Grid>
         <Grid item>
-          <Button className={classes.button} type='submit'>
+          <Button className={classes.button} type="submit">
             Search
           </Button>
         </Grid>
       </Grid>
       <Grid item xs={2}>
         <Switch
-          color='primary'
+          color="primary"
           onClick={(event) =>
             event.target.checked
-              ? dispatch({
-                  type: 'SetDarkTheme',
-                  payload: { theme: darkTheme },
-                })
-              : dispatch({
-                  type: 'SetDefaultTheme',
-                })
+              ? dispatch(setDarkTheme())
+              : dispatch(setDefaultTheme())
           }
         />
       </Grid>

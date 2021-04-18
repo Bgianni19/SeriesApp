@@ -1,13 +1,6 @@
-import { GET_INPUT_VALUE_ON_CHANGE } from './types';
+import { SET_SEARCH_STATE } from "./types";
 
 export const setSearchState = (payload) => ({
-  type: 'SET_STATE',
+  type: SET_SEARCH_STATE,
   payload,
 });
-
-export function getInputValueOnChange(payload) {
-  return {
-    type: GET_INPUT_VALUE_ON_CHANGE,
-    payload,
-  };
-}

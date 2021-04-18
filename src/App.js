@@ -6,7 +6,7 @@ import Search from "./components/SearchBox/Search";
 import AllSeriesCards from "./components/SeriesCards/AllSeriesCards";
 
 function App() {
-  const theme = useSelector((state) => state.themeReducer.theme);
+  const { theme } = useSelector((state) => state.themeReducer);
 
   return (
     <ThemeProvider theme={theme}>

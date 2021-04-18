@@ -1,16 +1,23 @@
 import { useStylesS, SearchInput } from "./styles";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  setDefaultTheme,
+  setDarkTheme,
+  setTheme,
+} from "../../actions/themeActions";
+import { setSearchState } from "../../actions/searchActions";
 import { Grid, Button, Switch } from "@material-ui/core";
-import darkTheme from "../../themes/darkTheme";
+import { DEFAULT_THEME, DARK_THEME } from "../../themes/themeTypes";
 
 const Search = () => {
   const classes = useStylesS();
 
   const dispatch = useDispatch();
+  const { inputOnChange } = useSelector((state) => state.searchReducer);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch({ type: "GetInputValue" });
+    dispatch(setSearchState({ input: inputOnChange }));
   };
 
   return (
@@ -26,10 +33,7 @@ const Search = () => {
         <Grid item>
           <SearchInput
             onChange={(event) => {
-              dispatch({
-                type: "GetInputValueOnChange",
-                payload: { inputValueOnChange: event.target.value },
-              });
+              dispatch(setSearchState({ inputOnChange: event.target.value }));
             }}
             placeholder="Search"
           />
@@ -45,13 +49,8 @@ const Search = () => {
           color="primary"
           onClick={(event) =>
             event.target.checked
-              ? dispatch({
-                  type: "SetDarkTheme",
-                  payload: { theme: darkTheme },
-                })
-              : dispatch({
-                  type: "SetDefaultTheme",
-                })
+              ? dispatch(setTheme(DARK_THEME))
+              : dispatch(setTheme(DEFAULT_THEME))
           }
         />
       </Grid>

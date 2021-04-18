@@ -1,5 +1,6 @@
 import { useStylesASC } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
+import { setCardsState } from "../../actions/cardsActions";
 import { useEffect } from "react";
 import { Grid } from "@material-ui/core";
 import SeriesCard from "./SeriesCard";
@@ -8,9 +9,8 @@ const AllSeriesCards = () => {
   const classes = useStylesASC();
 
   const dispatch = useDispatch();
-
-  const input = useSelector((state) => state.searchReducer.input);
-  const seriesCard = useSelector((state) => state.cardsReducer.cards);
+  const { cards } = useSelector((state) => state.cardsReducer);
+  const { input } = useSelector((state) => state.searchReducer);
 
   useEffect(() => {
     async function fetchData() {
@@ -18,14 +18,14 @@ const AllSeriesCards = () => {
         `http://api.tvmaze.com/search/shows?q=${input}`
       );
       const data = await response.json();
-      dispatch({ type: "GetCards", payload: { cards: data } });
+      dispatch(setCardsState({ cards: data }));
     }
     fetchData();
   }, [input, dispatch]);
 
   return (
     <Grid className={classes.root} container alignItems="center">
-      {seriesCard.map(({ show }) => (
+      {cards.map(({ show }) => (
         <SeriesCard key={show.id} data={show} />
       ))}
     </Grid>

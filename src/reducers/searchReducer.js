@@ -1,11 +1,11 @@
+import { SET_SEARCH_STATE } from "../actions/types";
+
 const initialState = { inputOnChange: "", input: "" };
 
 const searchReducer = (state = initialState, action) => {
   switch (action.type) {
-    case "GetInputValueOnChange":
-      return { ...state, inputOnChange: action.payload.inputValueOnChange };
-    case "GetInputValue":
-      return { ...state, input: state.inputOnChange };
+    case SET_SEARCH_STATE:
+      return { ...state, ...action.payload };
     default:
       return state;
   }

@@ -1,14 +1,17 @@
+import { useStylesApp } from "./styles";
 import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
-import NavBar from "./components/NavBar/NavBar";
-import Search from "./components/SearchBox/Search";
-import AllSeriesCards from "./components/SeriesCards/AllSeriesCards";
 import defaultTheme from "./themes/defaultTheme";
 import darkTheme from "./themes/darkTheme";
 import { DEFAULT_THEME, DARK_THEME } from "./themes/themeTypes";
+import Home from "./pages/Home";
+import Cards from "./pages/Cards";
 
 function App() {
+  const classes = useStylesApp();
+
   const { theme: newTheme } = useSelector((state) => state.themeReducer);
   const [theme, setTheme] = useState(newTheme);
 
@@ -25,9 +28,14 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <NavBar />
-      <Search />
-      <AllSeriesCards />
+      <div className={classes.root}>
+        <Router>
+          <Home />
+          <Switch>
+            <Route path="/search" component={Cards} />
+          </Switch>
+        </Router>
+      </div>
     </ThemeProvider>
   );
 }

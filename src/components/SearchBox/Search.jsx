@@ -1,4 +1,5 @@
 import { useStylesS, SearchInput } from "./styles";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setThemeState } from "../../actions/themeActions";
 import { setSearchState } from "../../actions/searchActions";
@@ -35,9 +36,11 @@ const Search = () => {
           />
         </Grid>
         <Grid item>
-          <Button className={classes.button} type="submit">
-            Search
-          </Button>
+          <Link to="/search">
+            <Button className={classes.button} type="submit">
+              Search
+            </Button>
+          </Link>
         </Grid>
       </Grid>
       <Grid item xs={2}>

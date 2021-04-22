@@ -4,7 +4,6 @@ import { grey } from "@material-ui/core/colors";
 export const useStylesS = makeStyles((theme) => ({
   root: {
     padding: "26px 0",
-    backgroundColor: theme.palette.AppBackgroundColor,
   },
   button: {
     height: "100%",

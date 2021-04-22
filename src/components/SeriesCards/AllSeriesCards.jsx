@@ -1,4 +1,3 @@
-import { useStylesASC } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { setCardsState } from "../../actions/cardsActions";
 import { useEffect } from "react";
@@ -6,8 +5,6 @@ import { Grid } from "@material-ui/core";
 import SeriesCard from "./SeriesCard";
 
 const AllSeriesCards = () => {
-  const classes = useStylesASC();
-
   const dispatch = useDispatch();
   const { cards } = useSelector((state) => state.cardsReducer);
   const { input } = useSelector((state) => state.searchReducer);
@@ -24,7 +21,7 @@ const AllSeriesCards = () => {
   }, [input, dispatch]);
 
   return (
-    <Grid className={classes.root} container alignItems="center">
+    <Grid container alignItems="center">
       {cards.map(({ show }) => (
         <SeriesCard key={show.id} data={show} />
       ))}

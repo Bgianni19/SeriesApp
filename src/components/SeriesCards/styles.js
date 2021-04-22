@@ -1,12 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 import { red, grey } from "@material-ui/core/colors";
 
-export const useStylesASC = makeStyles((theme) => ({
-  root: {
-    backgroundColor: theme.palette.AppBackgroundColor,
-  },
-}));
-
 export const useStylesSC = makeStyles((theme) => ({
   card: {
     width: 300,

@@ -32,7 +32,7 @@ function App() {
         <Router>
           <Home />
           <Switch>
-            <Route path="/search" component={Cards} />
+            <Route path="/search/" component={Cards} />
           </Switch>
         </Router>
       </div>

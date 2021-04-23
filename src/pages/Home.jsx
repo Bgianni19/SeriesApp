@@ -1,11 +1,11 @@
 import NavBar from "../components/NavBar/NavBar";
-import Search from "../components/SearchBox/Search";
+import SearchBar from "../components/SearchBar/SearchBar";
 
 const Home = () => {
   return (
     <div>
       <NavBar />
-      <Search />
+      <SearchBar />
     </div>
   );
 };

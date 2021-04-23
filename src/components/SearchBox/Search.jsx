@@ -40,7 +40,7 @@ const Search = () => {
             component={Link}
             className={classes.button}
             to="/search"
-            type="submit"
+            type="submit" //unreachable
           >
             Search
           </Button>

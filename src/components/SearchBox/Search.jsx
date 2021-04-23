@@ -36,11 +36,14 @@ const Search = () => {
           />
         </Grid>
         <Grid item>
-          <Link to="/search">
-            <Button className={classes.button} type="submit">
-              Search
-            </Button>
-          </Link>
+          <Button
+            component={Link}
+            className={classes.button}
+            to="/search"
+            type="submit"
+          >
+            Search
+          </Button>
         </Grid>
       </Grid>
       <Grid item xs={2}>

@@ -1,6 +1,11 @@
 import { useStylesApp } from "./styles";
 import { useEffect, useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
 import defaultTheme from "./themes/defaultTheme";
@@ -32,7 +37,8 @@ function App() {
         <Router>
           <Home />
           <Switch>
-            <Route path="/search/" component={Cards} />
+            <Route path="/home" component={Cards} />
+            <Redirect to="/home" />
           </Switch>
         </Router>
       </div>

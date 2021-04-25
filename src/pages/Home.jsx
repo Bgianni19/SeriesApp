@@ -1,13 +1,7 @@
 import NavBar from "../components/NavBar/NavBar";
-import SearchBar from "../components/SearchBar/SearchBar";
 
 const Home = () => {
-  return (
-    <div>
-      <NavBar />
-      <SearchBar />
-    </div>
-  );
+  return <NavBar />;
 };
 
 export default Home;

@@ -19,7 +19,6 @@ const Search = () => {
     <Grid
       item
       container
-      xs={10}
       justify="center"
       component="form"
       onSubmit={handleSubmit}
@@ -30,12 +29,7 @@ const Search = () => {
         }}
         placeholder="Search"
       />
-      <Button
-        component={Link}
-        className={classes.button}
-        to="/home"
-        type="submit"
-      >
+      <Button component={Link} className={classes.button} to="/" type="submit">
         Search
       </Button>
     </Grid>

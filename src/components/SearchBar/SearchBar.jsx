@@ -1,7 +1,6 @@
 import { useStylesSB } from "./styles";
 import { Grid } from "@material-ui/core";
 import Search from "./Search";
-import ThemeSelector from "./ThemeSelector";
 
 const SearchBar = () => {
   const classes = useStylesSB();
@@ -9,7 +8,6 @@ const SearchBar = () => {
   return (
     <Grid className={classes.root} container>
       <Search />
-      <ThemeSelector />
     </Grid>
   );
 };

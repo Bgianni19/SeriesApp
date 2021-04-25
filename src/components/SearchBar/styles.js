@@ -31,15 +31,6 @@ export const SearchInput = withStyles((theme) => ({
   },
 }))(InputBase);
 
-export const useStylesTS = makeStyles((theme) => ({
-  button: {
-    color: grey[600],
-    backgroundColor: grey[50],
-    borderColor: grey[400],
-    "&:hover": { backgroundColor: grey[200] },
-  },
-}));
-
 export const useStylesSB = makeStyles((theme) => ({
   root: { padding: "26px 0" },
 }));

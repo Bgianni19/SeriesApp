@@ -1,20 +1,35 @@
 import { makeStyles } from "@material-ui/core/styles";
-import { blueGrey } from "@material-ui/core/colors";
+import { blueGrey, grey } from "@material-ui/core/colors";
 
 export const useStylesNB = makeStyles((theme) => ({
   root: {
     position: "static",
     boxShadow: "none",
-    flexGrow: 1,
   },
   toolbar: {
-    height: 126,
+    height: 100,
     alignItems: "flex-start",
     paddingTop: theme.spacing(4),
     backgroundColor: blueGrey[600],
   },
   title: {
+    fontSize: 26,
+    textDecoration: "none",
     flexGrow: 1,
     alignSelf: "flex-start",
+  },
+  titleLink: { textDecoration: "none", color: blueGrey[50] },
+  iconButton: { height: 39, width: 39 },
+  icon: { fontSize: 26, color: blueGrey[50] },
+}));
+
+export const useStylesTS = makeStyles((theme) => ({
+  button: {
+    height: 39,
+    marginLeft: 8,
+    color: grey[50],
+    backgroundColor: "transparent",
+    borderColor: grey[400],
+    "&:hover": { backgroundColor: blueGrey[900] },
   },
 }));

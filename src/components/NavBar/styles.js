@@ -3,7 +3,6 @@ import { blueGrey, grey } from "@material-ui/core/colors";
 
 export const useStylesNB = makeStyles((theme) => ({
   root: {
-    position: "static",
     boxShadow: "none",
   },
   toolbar: {

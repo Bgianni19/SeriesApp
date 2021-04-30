@@ -1,13 +1,13 @@
 import { useStylesNB } from "./styles";
 import { Link } from "react-router-dom";
-import { AppBar, Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography } from "@material-ui/core";
 import ThemeSelector from "./ThemeSelector";
 
 const NavBar = () => {
   const classes = useStylesNB();
 
   return (
-    <AppBar className={classes.root}>
+    <div className={classes.root}>
       <Toolbar className={classes.toolbar}>
         <Typography className={classes.title}>
           <Link className={classes.titleLink} to="/">
@@ -16,7 +16,7 @@ const NavBar = () => {
         </Typography>
         <ThemeSelector />
       </Toolbar>
-    </AppBar>
+    </div>
   );
 };
 

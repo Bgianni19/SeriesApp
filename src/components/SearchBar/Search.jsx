@@ -1,5 +1,5 @@
 import { useStylesS, SearchInput } from "./styles";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchState } from "../../actions/searchActions";
 import { Grid, Button } from "@material-ui/core";
@@ -7,12 +7,13 @@ import { Grid, Button } from "@material-ui/core";
 const Search = () => {
   const classes = useStylesS();
 
+  const history = useHistory();
   const dispatch = useDispatch();
-  const { inputOnChange } = useSelector((state) => state.searchReducer);
+  const { input } = useSelector((state) => state.searchReducer);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(setSearchState({ input: inputOnChange }));
+    history.push(`/?q=${input}`);
   };
 
   return (
@@ -25,11 +26,11 @@ const Search = () => {
     >
       <SearchInput
         onChange={(event) => {
-          dispatch(setSearchState({ inputOnChange: event.target.value }));
+          dispatch(setSearchState({ input: event.target.value }));
         }}
         placeholder="Search"
       />
-      <Button component={Link} className={classes.button} to="/" type="submit">
+      <Button className={classes.button} type="submit">
         Search
       </Button>
     </Grid>

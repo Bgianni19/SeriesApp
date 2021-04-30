@@ -13,7 +13,6 @@ import darkTheme from "./themes/darkTheme";
 import { DEFAULT_THEME, DARK_THEME } from "./themes/themeTypes";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
-import ShoppingCart from "./pages/ShoppingCart";
 
 function App() {
   const classes = useStylesApp();
@@ -39,7 +38,6 @@ function App() {
           <Home />
           <Switch>
             <Route exact path="/" component={Cards} />
-            <Route exact path="/shopping-cart" component={ShoppingCart} />
             <Redirect to="/" />
           </Switch>
         </Router>

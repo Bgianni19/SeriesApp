@@ -19,8 +19,6 @@ export const useStylesNB = makeStyles((theme) => ({
     alignSelf: "flex-start",
   },
   titleLink: { textDecoration: "none", color: blueGrey[50] },
-  iconButton: { height: 39, width: 39 },
-  icon: { fontSize: 26, color: blueGrey[50] },
 }));
 
 export const useStylesTS = makeStyles((theme) => ({

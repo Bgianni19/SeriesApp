@@ -33,6 +33,7 @@ const SeriesCard = ({ data }) => {
             disableElevation
             variant="contained"
             color="primary"
+            disabled
           >
             Add to cart
           </Button>
@@ -42,6 +43,7 @@ const SeriesCard = ({ data }) => {
             disableElevation
             variant="contained"
             color="primary"
+            disabled
           >
             Buy
           </Button>

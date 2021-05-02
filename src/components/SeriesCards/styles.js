@@ -1,6 +1,10 @@
 import { makeStyles } from "@material-ui/core";
 import { red, grey } from "@material-ui/core/colors";
 
+export const useStylesASC = makeStyles((theme) => ({
+  root: { height: `calc(100vh - 80px - 148px)`, overflowY: "auto" },
+}));
+
 export const useStylesSC = makeStyles((theme) => ({
   card: {
     width: 300,

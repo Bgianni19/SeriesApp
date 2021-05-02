@@ -19,7 +19,9 @@ export const SearchInput = withStyles((theme) => ({
     border: `0.5px solid ${grey[500]}`,
     fontSize: 14,
     width: "25vw",
-    padding: "12px 16px",
+    height: 24.5,
+    paddingLeft: 16,
+    paddingRight: 16,
     color: grey[600],
     backgroundColor: grey[50],
     transition: theme.transitions.create(["border-color", "box-shadow"]),
@@ -32,5 +34,7 @@ export const SearchInput = withStyles((theme) => ({
 }))(InputBase);
 
 export const useStylesSB = makeStyles((theme) => ({
-  root: { padding: "26px 0" },
+  root: {
+    padding: "20px 0",
+  },
 }));

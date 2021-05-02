@@ -1,4 +1,4 @@
-import { blueGrey, grey } from '@material-ui/core/colors';
+import { blueGrey, grey } from "@material-ui/core/colors";
 
 const defaultColors = {
   AppBackgroundColor: blueGrey[30],

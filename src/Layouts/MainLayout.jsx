@@ -1,8 +1,8 @@
-import React from 'react';
-import { useStyles } from './styles';
+import { useStylesML } from "./styles";
 
 const MainLayout = ({ children }) => {
-  const classes = useStyles();
+  const classes = useStylesML();
+
   return <div className={classes.root}>{children}</div>;
 };
 

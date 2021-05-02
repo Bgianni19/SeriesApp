@@ -1,8 +1,8 @@
-import { useStylesTS } from './styles';
-import { useDispatch } from 'react-redux';
-import { setThemeState } from '../../actions/themeActions';
-import * as themes from '../../themes';
-import { ButtonGroup, Button } from '@material-ui/core';
+import { useStylesTS } from "./styles";
+import { useDispatch } from "react-redux";
+import { setThemeState } from "../../actions/themeActions";
+import * as themes from "../../themes";
+import { ButtonGroup, Button } from "@material-ui/core";
 
 const ThemeSelector = () => {
   const classes = useStylesTS();

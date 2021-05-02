@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux';
 import { ThemeProvider } from '@material-ui/core';
 import Home from './pages/Home';
 import Cards from './pages/Cards';
+import MainLayout from './Layouts/MainLayout';
 
 function App() {
   const classes = useStylesApp();
@@ -16,15 +17,15 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-        <Router>
+      <Router>
+        <MainLayout>
           <Home />
           <Switch>
             <Route exact path='/' component={Cards} />
             <Redirect to='/' />
           </Switch>
-        </Router>
-      </div>
+        </MainLayout>
+      </Router>
     </ThemeProvider>
   );
 }

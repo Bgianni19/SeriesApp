@@ -9,8 +9,6 @@ const ThemeSelector = () => {
 
   const dispatch = useDispatch();
 
-  console.log(themes);
-
   return (
     <ButtonGroup>
       <Button

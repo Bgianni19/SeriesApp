@@ -1,25 +1,27 @@
-import { useStylesTS } from "./styles";
-import { useDispatch } from "react-redux";
-import { setThemeState } from "../../actions/themeActions";
-import { DEFAULT_THEME, DARK_THEME } from "../../themes/themeTypes";
-import { ButtonGroup, Button } from "@material-ui/core";
+import { useStylesTS } from './styles';
+import { useDispatch } from 'react-redux';
+import { setThemeState } from '../../actions/themeActions';
+import * as themes from '../../themes';
+import { ButtonGroup, Button } from '@material-ui/core';
 
 const ThemeSelector = () => {
   const classes = useStylesTS();
 
   const dispatch = useDispatch();
 
+  console.log(themes);
+
   return (
     <ButtonGroup>
       <Button
         className={classes.button}
-        onClick={() => dispatch(setThemeState(DEFAULT_THEME))}
+        onClick={() => dispatch(setThemeState(themes.defaultTheme))}
       >
         Light
       </Button>
       <Button
         className={classes.button}
-        onClick={() => dispatch(setThemeState(DARK_THEME))}
+        onClick={() => dispatch(setThemeState(themes.darkTheme))}
       >
         Dark
       </Button>

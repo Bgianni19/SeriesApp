@@ -1,35 +1,18 @@
-import { useStylesApp } from "./styles";
-import { useEffect, useState } from "react";
+import { useStylesApp } from './styles';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
-import { useSelector } from "react-redux";
-import { ThemeProvider } from "@material-ui/core";
-import defaultTheme from "./themes/defaultTheme";
-import darkTheme from "./themes/darkTheme";
-import { DEFAULT_THEME, DARK_THEME } from "./themes/themeTypes";
-import Home from "./pages/Home";
-import Cards from "./pages/Cards";
+} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { ThemeProvider } from '@material-ui/core';
+import Home from './pages/Home';
+import Cards from './pages/Cards';
 
 function App() {
   const classes = useStylesApp();
-
-  const { theme: newTheme } = useSelector((state) => state.themeReducer);
-  const [theme, setTheme] = useState(newTheme);
-
-  useEffect(() => {
-    switch (newTheme) {
-      case DEFAULT_THEME:
-        return setTheme(defaultTheme);
-      case DARK_THEME:
-        return setTheme(darkTheme);
-      default:
-        setTheme(defaultTheme);
-    }
-  }, [newTheme]);
+  const { theme } = useSelector((state) => state.themeReducer);
 
   return (
     <ThemeProvider theme={theme}>
@@ -37,8 +20,8 @@ function App() {
         <Router>
           <Home />
           <Switch>
-            <Route exact path="/" component={Cards} />
-            <Redirect to="/" />
+            <Route exact path='/' component={Cards} />
+            <Redirect to='/' />
           </Switch>
         </Router>
       </div>

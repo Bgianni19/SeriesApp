@@ -6,9 +6,10 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
-import MainLayout from "./layouts/MainLayout";
+import Account from "./pages/Account";
 
 function App() {
   const { theme } = useSelector((state) => state.themeReducer);
@@ -20,6 +21,7 @@ function App() {
           <Home />
           <Switch>
             <Route exact path="/" component={Cards} />
+            <Route exact path="/account" component={Account} />
             <Redirect to="/" />
           </Switch>
         </MainLayout>

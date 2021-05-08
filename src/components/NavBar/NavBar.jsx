@@ -1,6 +1,7 @@
 import { useStylesNB } from "./styles";
 import { Link } from "react-router-dom";
-import { Toolbar, Typography } from "@material-ui/core";
+import { Toolbar, Typography, IconButton } from "@material-ui/core";
+import { AccountCircle } from "@material-ui/icons";
 import ThemeSelector from "./ThemeSelector";
 
 const NavBar = () => {
@@ -14,6 +15,11 @@ const NavBar = () => {
             Series App
           </Link>
         </Typography>
+        <Link to="/account">
+          <IconButton className={classes.iconButton}>
+            <AccountCircle className={classes.icon} />
+          </IconButton>
+        </Link>
         <ThemeSelector />
       </Toolbar>
     </div>

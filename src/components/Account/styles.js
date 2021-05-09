@@ -11,6 +11,7 @@ export const useStylesA = makeStyles((theme) => ({
   },
   button: {
     fontSize: 16,
+    color: grey[800],
     width: 320,
     boxSizing: "border-box",
     height: 46,
@@ -25,6 +26,7 @@ export const useStylesA = makeStyles((theme) => ({
   createAccount: {
     textDecoration: "none",
     fontSize: 16,
+    color: grey[800],
     margin: "28px auto 0 4px",
   },
   createAccountLink: {

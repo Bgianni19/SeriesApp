@@ -78,19 +78,10 @@ const LoginAccount = () => {
             Signup
           </Button>
         </Grid>
-        <Grid
-          component={Link}
-          item
-          to="/forgot-password"
-          className={classes.forgotPassword}
-          disabled
-        >
-          Forget Password?
-        </Grid>
         <Grid item className={classes.createAccount}>
-          Need an Account?
-          <Link className={classes.createAccountLink} to="/signup">
-            Sign Up
+          Already Have an Account?
+          <Link className={classes.createAccountLink} to="/login">
+            Log In
           </Link>
         </Grid>
       </Paper>

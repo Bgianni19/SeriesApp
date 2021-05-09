@@ -23,9 +23,9 @@ export const useStylesNB = makeStyles((theme) => ({
 }));
 
 export const useStylesTS = makeStyles((theme) => ({
+  buttonGroup: { margin: "5.5px 4px" },
   button: {
-    height: 39,
-    marginLeft: 8,
+    height: 28,
     color: grey[50],
     backgroundColor: "transparent",
     borderColor: grey[400],

@@ -10,7 +10,7 @@ const ThemeSelector = () => {
   const dispatch = useDispatch();
 
   return (
-    <ButtonGroup>
+    <ButtonGroup className={classes.buttonGroup}>
       <Button
         className={classes.button}
         onClick={() => dispatch(setThemeState(themes.defaultTheme))}

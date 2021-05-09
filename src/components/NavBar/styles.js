@@ -16,6 +16,12 @@ export const useStylesNB = makeStyles((theme) => ({
     textDecoration: "none",
     flexGrow: 1,
     alignSelf: "flex-start",
+    color: grey[50],
+    "&:hover": {
+      textDecoration: "underline",
+      textDecorationThickness: 2,
+      textDecorationColor: grey[50],
+    },
   },
   titleLink: { textDecoration: "none", color: blueGrey[50] },
   iconButton: { height: 39, width: 39 },

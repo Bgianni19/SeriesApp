@@ -1,13 +1,36 @@
 import { makeStyles, withStyles, InputBase } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 
-export const useStylesPA = makeStyles((theme) => ({
+export const useStylesLA = makeStyles((theme) => ({
   root: { height: `calc(100% - 132px)` },
-  title: { fontSize: 26, marginBottom: 18 },
-  button: {
+  paper: {
+    padding: 38,
+    textAlign: "center",
+    borderRadius: 8,
+    backgroundColor: grey[200],
+  },
+  login: {
     fontSize: 16,
-    padding: "8px 20px",
-    margin: "18px 8px",
+    width: 320,
+    boxSizing: "border-box",
+    height: 46,
+    margin: "18px 0 38px 0",
+    borderRadius: 8,
+    backgroundColor: grey[400],
+  },
+  forgotPassword: {
+    textDecoration: "underline",
+    fontSize: 18,
+  },
+  createAccount: {
+    textDecoration: "none",
+    fontSize: 16,
+    margin: "28px auto 0 4px",
+  },
+  createAccountLink: {
+    textDecoration: "none",
+    fontSize: 16,
+    margin: "28px auto 0 4px",
   },
 }));
 

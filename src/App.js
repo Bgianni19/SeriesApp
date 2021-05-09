@@ -9,7 +9,7 @@ import { ThemeProvider } from "@material-ui/core";
 import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
-import Account from "./pages/Account";
+import Login from "./pages/Login";
 
 function App() {
   const { theme } = useSelector((state) => state.themeReducer);
@@ -21,7 +21,7 @@ function App() {
           <Home />
           <Switch>
             <Route exact path="/" component={Cards} />
-            <Route exact path="/account" component={Account} />
+            <Route exact path="/login" component={Login} />
             <Redirect to="/" />
           </Switch>
         </MainLayout>

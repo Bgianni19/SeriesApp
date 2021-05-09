@@ -15,7 +15,7 @@ const NavBar = () => {
             Series App
           </Link>
         </Typography>
-        <Link to="/account">
+        <Link to="/login">
           <IconButton className={classes.iconButton}>
             <AccountCircle className={classes.icon} />
           </IconButton>

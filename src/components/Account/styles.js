@@ -1,7 +1,7 @@
 import { makeStyles, withStyles, InputBase } from "@material-ui/core";
 import { grey } from "@material-ui/core/colors";
 
-export const useStylesLA = makeStyles((theme) => ({
+export const useStylesA = makeStyles((theme) => ({
   root: { height: `calc(100% - 132px)` },
   paper: {
     padding: 38,
@@ -9,7 +9,7 @@ export const useStylesLA = makeStyles((theme) => ({
     borderRadius: 8,
     backgroundColor: grey[200],
   },
-  login: {
+  button: {
     fontSize: 16,
     width: 320,
     boxSizing: "border-box",

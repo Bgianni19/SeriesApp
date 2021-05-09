@@ -1,11 +1,11 @@
-import { useStylesLA, Email, Password } from "./styles";
+import { useStylesA, Email, Password } from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { setAccountState } from "../../actions/accountActions";
 import { Link } from "react-router-dom";
 import { Grid, Paper, Button } from "@material-ui/core";
 
 const LoginAccount = () => {
-  const classes = useStylesLA();
+  const classes = useStylesA();
 
   const dispatch = useDispatch();
   const { loginEmailOnChange, loginPasswordOnChange } = useSelector(
@@ -56,7 +56,7 @@ const LoginAccount = () => {
           />
         </Grid>
         <Grid>
-          <Button className={classes.login} type="submit">
+          <Button className={classes.button} type="submit">
             Login
           </Button>
         </Grid>

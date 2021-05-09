@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ThemeProvider } from "@material-ui/core";
-import MainLayout from "./layout/MainLayout";
+import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
 import Login from "./pages/Login";

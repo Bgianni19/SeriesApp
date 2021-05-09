@@ -36,6 +36,9 @@ const LoginAccount = () => {
       onSubmit={handleSignup}
     >
       <Paper className={classes.paper} elevation={0}>
+        <Grid item className={classes.title}>
+          Sign Up
+        </Grid>
         <Grid item>
           <Email
             placeholder="Email"

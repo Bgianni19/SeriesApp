@@ -17,7 +17,6 @@ const initalState = {
 const accountReducer = (state = initalState, action) => {
   switch (action.type) {
     case SET_ACCOUNT_STATE:
-      console.log(state);
       return { ...state, ...action.payload };
     default:
       return state;

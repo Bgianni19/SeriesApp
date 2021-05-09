@@ -9,6 +9,7 @@ export const useStylesA = makeStyles((theme) => ({
     borderRadius: 8,
     backgroundColor: grey[200],
   },
+  title: { color: grey[800], fontSize: 32, marginBottom: 38 },
   button: {
     fontSize: 16,
     color: grey[800],
@@ -54,7 +55,10 @@ export const Email = withStyles((theme) => ({
 export const Password = withStyles((theme) => ({
   input: {
     borderRadius: "0 0 8px 8px",
-    border: `1px solid ${grey[500]}`,
+    borderRight: `1px solid ${grey[500]}`,
+    borderLeft: `1px solid ${grey[500]}`,
+    borderBottom: `1px solid ${grey[500]}`,
+    borderTop: 0,
     fontSize: 16,
     width: 320,
     boxSizing: "border-box",
@@ -69,7 +73,10 @@ export const Password = withStyles((theme) => ({
 export const SignupPassword = withStyles((theme) => ({
   input: {
     borderRadius: 0,
-    border: `1px solid ${grey[500]}`,
+    borderRight: `1px solid ${grey[500]}`,
+    borderLeft: `1px solid ${grey[500]}`,
+    borderBottom: `1px solid ${grey[500]}`,
+    borderTop: 0,
     fontSize: 16,
     width: 320,
     boxSizing: "border-box",

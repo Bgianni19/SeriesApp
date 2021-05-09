@@ -10,6 +10,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import Cards from "./pages/Cards";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 
 function App() {
   const { theme } = useSelector((state) => state.themeReducer);
@@ -22,6 +23,7 @@ function App() {
           <Switch>
             <Route exact path="/" component={Cards} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/signup" component={Signup} />
             <Redirect to="/" />
           </Switch>
         </MainLayout>

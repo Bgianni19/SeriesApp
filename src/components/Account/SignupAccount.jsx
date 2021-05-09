@@ -1,25 +1,12 @@
-import { useStylesLA, Email, Password } from "./styles";
-import { useDispatch, useSelector } from "react-redux";
-import { setAccountState } from "../../actions/accountActions";
+import { useStylesLA, Email, Password, SignupPassword } from "./styles";
 import { Link } from "react-router-dom";
 import { Grid, Paper, Button } from "@material-ui/core";
 
 const LoginAccount = () => {
   const classes = useStylesLA();
 
-  const dispatch = useDispatch();
-  const { loginEmailOnChange, loginPasswordOnChange } = useSelector(
-    (state) => state.accountReducer
-  );
-
-  const handleLogin = (event) => {
+  const handleSignup = (event) => {
     event.preventDefault();
-    dispatch(
-      setAccountState({
-        loginEmail: loginEmailOnChange,
-        loginPassword: loginPasswordOnChange,
-      })
-    );
   };
 
   return (
@@ -30,34 +17,21 @@ const LoginAccount = () => {
       justify="center"
       alignItems="center"
       direction="column"
-      onSubmit={handleLogin}
+      onSubmit={handleSignup}
     >
       <Paper className={classes.paper} elevation={0}>
         <Grid item>
-          <Email
-            placeholder="Email"
-            type="email"
-            onChange={(event) => {
-              dispatch(
-                setAccountState({ loginEmailOnChange: event.target.value })
-              );
-            }}
-          />
+          <Email placeholder="Email" type="email" />
         </Grid>
         <Grid item>
-          <Password
-            placeholder="Password"
-            type="password"
-            onChange={(event) => {
-              dispatch(
-                setAccountState({ loginPasswordOnChange: event.target.value })
-              );
-            }}
-          />
+          <SignupPassword placeholder="Password" type="password" />
+        </Grid>
+        <Grid item>
+          <Password placeholder="Re-enter Password" type="password" />
         </Grid>
         <Grid>
           <Button className={classes.login} type="submit">
-            Login
+            Signup
           </Button>
         </Grid>
         <Grid

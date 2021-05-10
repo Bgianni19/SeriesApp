@@ -9,7 +9,3 @@ export const SET_SEARCH_STATE = "setSearchState";
 // cards //
 export const SET_CARDS_STATE = "setCardsState";
 // cards //
-
-// Account //
-export const SET_ACCOUNT_STATE = "setAccountState";
-// Account //

@@ -1,6 +1,8 @@
 import { useStylesA, Email, Password } from "./styles";
 import { useState } from "react";
 import { useHistory, Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setAccountState } from "../../actions/accountActions";
 import { Grid, Paper, Button } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useAuth } from "../../base/context/AuthContext";
@@ -8,6 +10,7 @@ import { useAuth } from "../../base/context/AuthContext";
 const LoginAccount = () => {
   const classes = useStylesA();
 
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const [email, setEmail] = useState("");
@@ -24,6 +27,7 @@ const LoginAccount = () => {
     try {
       setError("");
       await login(email, password);
+      dispatch(setAccountState({ loggedIn: true }));
       history.push("/");
     } catch {
       setError("Failed to login to your account!");

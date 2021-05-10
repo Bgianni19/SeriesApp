@@ -24,6 +24,15 @@ export const useStylesNB = makeStyles((theme) => ({
     },
   },
   titleLink: { textDecoration: "none", color: blueGrey[50] },
+  button: {
+    margin: "5.5px 4px",
+    border: `1px solid ${grey[50]}`,
+    height: 28,
+    color: grey[50],
+    backgroundColor: "transparent",
+    borderColor: grey[400],
+    "&:hover": { backgroundColor: blueGrey[900] },
+  },
   iconButton: { height: 39, width: 39 },
   icon: { fontSize: 28, color: grey[50] },
 }));

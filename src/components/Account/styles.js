@@ -10,6 +10,7 @@ export const useStylesA = makeStyles((theme) => ({
     backgroundColor: grey[200],
   },
   title: { color: grey[800], fontSize: 32, marginBottom: 38 },
+  error: { margin: "12px 0", borderRadius: 8 },
   button: {
     fontSize: 16,
     color: grey[800],

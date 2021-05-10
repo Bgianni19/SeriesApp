@@ -1,28 +1,36 @@
 import { useStylesA, Email, Password, SignupPassword } from "./styles";
-import { useDispatch, useSelector } from "react-redux";
-import { setAccountState } from "../../actions/accountActions";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Grid, Paper, Button } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { useAuth } from "../../base/context/AuthContext";
 
 const LoginAccount = () => {
   const classes = useStylesA();
 
-  const dispatch = useDispatch();
-  const {
-    signupEmailOnChange,
-    signupPasswordOneOnChange,
-    signupPasswordTwoOnChange,
-  } = useSelector((state) => state.accountReducer);
+  const [email, setEmail] = useState("");
+  const [password_I, setPassword_I] = useState("");
+  const [password_II, setPassword_II] = useState("");
 
-  const handleSignup = (event) => {
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const { signup } = useAuth();
+
+  const handleSignup = async (event) => {
     event.preventDefault();
-    dispatch(
-      setAccountState({
-        signupEmail: signupEmailOnChange,
-        signupPasswordOne: signupPasswordOneOnChange,
-        signupPasswordTwo: signupPasswordTwoOnChange,
-      })
-    );
+    setLoading(true);
+    if (password_I !== password_II) {
+      setError("Passwords do not match!");
+    } else {
+      try {
+        setError("");
+        await signup(email, password_I);
+      } catch {
+        setError("Failed to create your account!");
+      }
+    }
+    setLoading(false);
   };
 
   return (
@@ -40,13 +48,19 @@ const LoginAccount = () => {
           Sign Up
         </Grid>
         <Grid item>
+          {error && (
+            <Alert className={classes.error} severity="error">
+              {error}
+            </Alert>
+          )}
+        </Grid>
+        <Grid item>
           <Email
             placeholder="Email"
             type="email"
+            required
             onChange={(event) => {
-              dispatch(
-                setAccountState({ signupEmailOnChange: event.target.value })
-              );
+              setEmail(event.target.value);
             }}
           />
         </Grid>
@@ -54,12 +68,9 @@ const LoginAccount = () => {
           <SignupPassword
             placeholder="Password"
             type="password"
+            required
             onChange={(event) => {
-              dispatch(
-                setAccountState({
-                  signupPasswordOneOnChange: event.target.value,
-                })
-              );
+              setPassword_I(event.target.value);
             }}
           />
         </Grid>
@@ -67,17 +78,14 @@ const LoginAccount = () => {
           <Password
             placeholder="Re-enter Password"
             type="password"
+            required
             onChange={(event) => {
-              dispatch(
-                setAccountState({
-                  signupPasswordTwoOnChange: event.target.value,
-                })
-              );
+              setPassword_II(event.target.value);
             }}
           />
         </Grid>
         <Grid>
-          <Button className={classes.button} type="submit">
+          <Button className={classes.button} disabled={loading} type="submit">
             Signup
           </Button>
         </Grid>

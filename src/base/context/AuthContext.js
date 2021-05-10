@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from "react";
 import { auth } from "../base";
-import { signup } from "./AuthActions";
+import { signup, login } from "./AuthActions";
 
 export const AuthContext = createContext();
 
@@ -11,7 +11,7 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState();
 
-  const value = { currentUser, signup };
+  const value = { currentUser, signup, login };
 
   useEffect(() => {
     const unsibscribe = auth.onAuthStateChanged((user) => setCurrentUser(user));

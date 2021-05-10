@@ -1,12 +1,34 @@
 import { useStylesA, Email, Password } from "./styles";
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { useHistory, Link } from "react-router-dom";
 import { Grid, Paper, Button } from "@material-ui/core";
+import { Alert } from "@material-ui/lab";
+import { useAuth } from "../../base/context/AuthContext";
 
 const LoginAccount = () => {
   const classes = useStylesA();
 
-  const handleLogin = (event) => {
+  const history = useHistory();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [loading, setLoading] = useState("");
+  const [error, setError] = useState("");
+
+  const { login } = useAuth();
+
+  const handleLogin = async (event) => {
     event.preventDefault();
+    setLoading(true);
+    try {
+      setError("");
+      await login(email, password);
+      history.push("/");
+    } catch {
+      setError("Failed to login to your account!");
+    }
+    setLoading(false);
   };
 
   return (
@@ -24,17 +46,32 @@ const LoginAccount = () => {
           Log In
         </Grid>
         <Grid item>
-          <Email placeholder="Email" type="email" onChange={(event) => {}} />
+          {error && (
+            <Alert className={classes.alert} severity="error">
+              {error}
+            </Alert>
+          )}
+        </Grid>
+        <Grid item>
+          <Email
+            placeholder="Email"
+            type="email"
+            onChange={(event) => {
+              setEmail(event.target.value);
+            }}
+          />
         </Grid>
         <Grid item>
           <Password
             placeholder="Password"
             type="password"
-            onChange={(event) => {}}
+            onChange={(event) => {
+              setPassword(event.target.value);
+            }}
           />
         </Grid>
         <Grid>
-          <Button className={classes.button} type="submit">
+          <Button className={classes.button} disabled={loading} type="submit">
             Login
           </Button>
         </Grid>

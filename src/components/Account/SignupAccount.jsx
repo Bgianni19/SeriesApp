@@ -52,7 +52,7 @@ const LoginAccount = () => {
         </Grid>
         <Grid item>
           {error && (
-            <Alert className={classes.error} severity="error">
+            <Alert className={classes.alert} severity="error">
               {error}
             </Alert>
           )}

@@ -1,12 +1,14 @@
 import { useStylesA, Email, Password, SignupPassword } from "./styles";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Grid, Paper, Button } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useAuth } from "../../base/context/AuthContext";
 
 const LoginAccount = () => {
   const classes = useStylesA();
+
+  const history = useHistory();
 
   const [email, setEmail] = useState("");
   const [password_I, setPassword_I] = useState("");
@@ -26,6 +28,7 @@ const LoginAccount = () => {
       try {
         setError("");
         await signup(email, password_I);
+        history.push("/");
       } catch {
         setError("Failed to create your account!");
       }

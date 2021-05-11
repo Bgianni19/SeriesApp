@@ -53,6 +53,21 @@ export const Email = withStyles((theme) => ({
   },
 }))(InputBase);
 
+export const ForgotPasswordEmail = withStyles((theme) => ({
+  input: {
+    borderRadius: 8,
+    border: "1px solid #1d2228",
+    fontSize: 16,
+    width: 280,
+    boxSizing: "border-box",
+    height: 52,
+    paddingLeft: 16,
+    paddingRight: 16,
+    color: "#1d2228",
+    backgroundColor: "#f7f7f7",
+  },
+}))(InputBase);
+
 export const Password = withStyles((theme) => ({
   input: {
     borderRadius: "0 0 8px 8px",

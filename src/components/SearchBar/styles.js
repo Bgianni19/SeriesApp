@@ -3,15 +3,13 @@ import { grey, blueGrey } from "@material-ui/core/colors";
 
 export const useStylesS = makeStyles((theme) => ({
   button: {
-    fontSize: 16,
     height: "100%",
     borderRadius: "0 6px 6px 0",
-    paddingLeft: 26,
-    paddingRight: 26,
     color: grey[50],
     backgroundColor: blueGrey[600],
     "&:hover": { backgroundColor: blueGrey[400] },
   },
+  buttonIcon: { fontSize: 26 },
 }));
 
 export const SearchInput = withStyles((theme) => ({

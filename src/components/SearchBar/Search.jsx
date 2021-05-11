@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchState } from "../../actions/searchActions";
 import { Grid, Button } from "@material-ui/core";
+import { ArrowForward } from "@material-ui/icons";
 
 const Search = () => {
   const classes = useStylesS();
@@ -31,7 +32,7 @@ const Search = () => {
         placeholder="Search"
       />
       <Button className={classes.button} type="submit">
-        Search
+        <ArrowForward className={classes.buttonIcon} />
       </Button>
     </Grid>
   );

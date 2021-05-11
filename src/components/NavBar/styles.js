@@ -32,7 +32,8 @@ export const useStylesNB = makeStyles((theme) => ({
     "&:hover": { backgroundColor: "transparent" },
   },
   icon: {
-    fontSize: 30,
+    height: 39,
+    width: 39,
     color: "#f7f7f7",
     "&:hover": { color: "#fb8122" },
   },
@@ -40,20 +41,13 @@ export const useStylesNB = makeStyles((theme) => ({
 
 export const useStylesTS = makeStyles((theme) => ({
   buttonGroup: { margin: "5.5px 4px" },
-  rightButton: {
+  button: {
     height: 28,
-    borderStyle: "solid solid solid none",
     color: "#f7f7f7",
     backgroundColor: "transparent",
     borderColor: "#f7f7f7",
-    "&:hover": { borderColor: "#fb8122", backgroundColor: "transparent" },
-  },
-  leftButton: {
-    height: 28,
-    borderStyle: "solid none solid solid",
-    color: "#f7f7f7",
-    backgroundColor: "transparent",
-    borderColor: "#f7f7f7",
-    "&:hover": { borderColor: "#fb8122", backgroundColor: "transparent" },
+    "&:hover": {
+      backgroundColor: "#fb8122",
+    },
   },
 }));

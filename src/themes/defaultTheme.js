@@ -1,5 +1,4 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { blueGrey } from "@material-ui/core/colors";
 import defaultColors from "../colors/defaultColors";
 
 const theme = createMuiTheme({
@@ -7,7 +6,7 @@ const theme = createMuiTheme({
     type: "light",
     ...defaultColors,
     primary: {
-      main: blueGrey[600],
+      main: "#fb8122",
     },
   },
 });

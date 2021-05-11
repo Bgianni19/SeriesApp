@@ -13,11 +13,7 @@ const NavBar = () => {
   return (
     <div className={classes.root}>
       <Toolbar className={classes.toolbar}>
-        <Typography className={classes.title}>
-          <Link className={classes.titleLink} to="/">
-            Series App
-          </Link>
-        </Typography>
+        <Typography className={classes.title}>Series App</Typography>
         {loggedIn && (
           <Button className={classes.button} onClick={""}>
             Logout

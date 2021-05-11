@@ -12,13 +12,13 @@ const ThemeSelector = () => {
   return (
     <ButtonGroup className={classes.buttonGroup}>
       <Button
-        className={classes.button}
+        className={classes.leftButton}
         onClick={() => dispatch(setThemeState(themes.defaultTheme))}
       >
         Light
       </Button>
       <Button
-        className={classes.button}
+        className={classes.rightButton}
         onClick={() => dispatch(setThemeState(themes.darkTheme))}
       >
         Dark

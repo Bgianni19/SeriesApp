@@ -32,7 +32,7 @@ export const useStylesSCD = makeStyles((theme) => ({
     color: theme.palette.FontColor,
   },
   data: {
-    borderBlockColor: "#e2e2e2",
+    borderBlockColor: "#fb8122",
     color: theme.palette.FontColor,
     overflow: "hidden",
   },

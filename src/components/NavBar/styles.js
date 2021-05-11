@@ -24,7 +24,7 @@ export const useStylesNB = makeStyles((theme) => ({
     color: "#f7f7f7",
     backgroundColor: "transparent",
     borderColor: "#f7f7f7",
-    "&:hover": { borderColor: "#fb8122", backgroundColor: "transparent" },
+    "&:hover": { backgroundColor: "#fb8122" },
   },
   iconButton: {
     height: 39,

@@ -24,11 +24,12 @@ export const useStylesNB = makeStyles((theme) => ({
     color: "#f7f7f7",
     backgroundColor: "transparent",
     borderColor: "#f7f7f7",
-    "&:hover": { backgroundColor: "#fb8122" },
+    "&:hover": { borderColor: "#fb8122", backgroundColor: "transparent" },
   },
   iconButton: {
     height: 39,
     width: 39,
+    "&:hover": { backgroundColor: "transparent" },
   },
   icon: {
     fontSize: 30,

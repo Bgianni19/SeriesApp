@@ -9,7 +9,7 @@ export const useStylesA = makeStyles((theme) => ({
     backgroundColor: "#e2e2e2",
   },
   title: { color: "#1d2228", fontSize: 32, marginBottom: 38 },
-  alert: { margin: "12px 0", borderRadius: 8 },
+  alert: { margin: "12px 0", borderRadius: 8, fontSize: 14 },
   button: {
     fontSize: 16,
     color: "#f7f7f7",

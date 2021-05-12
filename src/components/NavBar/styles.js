@@ -26,28 +26,11 @@ export const useStylesNB = makeStyles((theme) => ({
     borderColor: "#f7f7f7",
     "&:hover": { backgroundColor: "#fb8122" },
   },
-  iconButton: {
-    height: 39,
-    width: 39,
-    "&:hover": { backgroundColor: "transparent" },
-  },
-  icon: {
-    height: 39,
-    width: 39,
-    color: "#f7f7f7",
-    "&:hover": { color: "#fb8122" },
-  },
+  iconButton: { padding: "auto", "&:hover": { backgroundColor: "#0b0e11" } },
+  icon: { fontSize: 28, color: "#f7f7f7" },
 }));
 
 export const useStylesTS = makeStyles((theme) => ({
-  buttonGroup: { margin: "5.5px 4px" },
-  button: {
-    height: 28,
-    color: "#f7f7f7",
-    backgroundColor: "transparent",
-    borderColor: "#f7f7f7",
-    "&:hover": {
-      backgroundColor: "#fb8122",
-    },
-  },
+  iconButton: { padding: "auto", "&:hover": { backgroundColor: "#0b0e11" } },
+  icon: { fontSize: 28, color: "#f7f7f7" },
 }));

@@ -9,6 +9,7 @@ const theme = createMuiTheme({
       main: "#fb8122",
     },
   },
+  overrides: { MuiMenu: { list: { padding: 0 } } },
 });
 
 export default theme;

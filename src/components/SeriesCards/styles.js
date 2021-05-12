@@ -1,7 +1,7 @@
 import { makeStyles } from "@material-ui/core";
 
 export const useStylesASC = makeStyles((theme) => ({
-  root: { height: `calc(100vh - 80px - 148px)`, overflowY: "auto" },
+  root: { height: `calc(100vh - 80px - 132px)`, overflowY: "auto" },
 }));
 
 export const useStylesSC = makeStyles((theme) => ({

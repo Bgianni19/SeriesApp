@@ -1,17 +1,15 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStylesNB = makeStyles((theme) => ({
-  root: {
-    boxShadow: "none",
-  },
   toolbar: {
-    height: 100,
+    height: 82,
     alignItems: "flex-start",
-    paddingTop: theme.spacing(4),
+    padding: 16,
     backgroundColor: "#1d2228",
   },
   title: {
-    fontSize: 26,
+    margin: "7px 4px",
+    fontSize: 32,
     textDecoration: "none",
     flexGrow: 1,
     alignSelf: "flex-start",
@@ -28,6 +26,11 @@ export const useStylesNB = makeStyles((theme) => ({
   },
   iconButton: { padding: "auto", "&:hover": { backgroundColor: "#0b0e11" } },
   icon: { fontSize: 28, color: "#f7f7f7" },
+  menuItems: {
+    color: "#1d2228",
+    backgroundColor: "#f7f7f7",
+    "&:hover": { backgroundColor: "#fb8122" },
+  },
 }));
 
 export const useStylesTS = makeStyles((theme) => ({

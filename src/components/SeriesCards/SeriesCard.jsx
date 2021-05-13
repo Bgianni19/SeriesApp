@@ -29,7 +29,6 @@ const SeriesCard = ({ data }) => {
         <CardActions>
           <Button
             className={classes.button}
-            size="medium"
             disableElevation
             variant="contained"
             color="primary"
@@ -38,7 +37,6 @@ const SeriesCard = ({ data }) => {
           </Button>
           <Button
             className={classes.button}
-            size="medium"
             disableElevation
             variant="contained"
             color="primary"

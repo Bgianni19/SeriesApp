@@ -27,7 +27,7 @@ const LoginAccount = () => {
     setLoading(true);
     try {
       setError("");
-      await login(email, password);
+      await loginAuth(email, password);
       dispatch(setAccountState({ loggedIn: true }));
       history.push("/");
     } catch {

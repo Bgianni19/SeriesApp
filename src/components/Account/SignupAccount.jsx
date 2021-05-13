@@ -31,7 +31,7 @@ const LoginAccount = () => {
     } else {
       try {
         setError("");
-        await signup(email, password_I);
+        await signupAuth(email, password_I);
         dispatch(setAccountState({ loggedIn: true }));
         history.push("/");
       } catch {

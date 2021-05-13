@@ -27,7 +27,7 @@ const ForgotPasswordAccount = () => {
     setLoading(true);
     try {
       setError("");
-      await forgotPassword(email);
+      await forgotPasswordAuth(email);
       setMessage("Email sent! Check your inbox.");
     } catch {
       setError("Failed, please try again!");

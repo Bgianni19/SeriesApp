@@ -1,10 +1,7 @@
-import { blueGrey, grey } from "@material-ui/core/colors";
-
 const darkColors = {
-  AppBackgroundColor: blueGrey[900],
-  CardBackgroundColor: blueGrey[800],
-  ButtonBackgroundColor: blueGrey[900],
-  FontColor: grey[50],
+  AppBackgroundColor: "#0b0e11",
+  CardBackgroundColor: "#1d2228",
+  FontColor: "#f7f7f7",
 };
 
 export default darkColors;

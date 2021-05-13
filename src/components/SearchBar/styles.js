@@ -1,34 +1,33 @@
 import { makeStyles, withStyles, InputBase, fade } from "@material-ui/core";
-import { grey, blueGrey } from "@material-ui/core/colors";
 
 export const useStylesS = makeStyles((theme) => ({
   button: {
     height: "100%",
     borderRadius: "0 6px 6px 0",
-    paddingLeft: 26,
-    paddingRight: 26,
-    color: grey[50],
-    backgroundColor: blueGrey[600],
-    "&:hover": { backgroundColor: blueGrey[400] },
+    color: "#f7f7f7",
+    backgroundColor: "#1d2228",
+    "&:hover": { backgroundColor: "#fb8122" },
   },
+  buttonIcon: { fontSize: 26 },
 }));
 
 export const SearchInput = withStyles((theme) => ({
   input: {
     borderRadius: "6px 0 0 6px",
-    border: `0.5px solid ${grey[500]}`,
-    fontSize: 14,
+    border: "1px solid #1d2228",
+    borderRight: 0,
+    fontSize: 16,
     width: "25vw",
     height: 24.5,
     paddingLeft: 16,
     paddingRight: 16,
-    color: grey[600],
-    backgroundColor: grey[50],
+    color: "#1d2228",
+    backgroundColor: "#f7f7f7",
     transition: theme.transitions.create(["border-color", "box-shadow"]),
 
     "&:focus": {
-      boxShadow: `${fade(grey[600], 0.2)} 0 0 0.2rem 0.2rem`,
-      borderColor: grey[600],
+      boxShadow: `${fade("#1d2228", 0.2)} 0 0 8px 2px`,
+      borderColor: "#1d2228",
     },
   },
 }))(InputBase);

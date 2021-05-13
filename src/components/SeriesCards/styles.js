@@ -1,8 +1,7 @@
 import { makeStyles } from "@material-ui/core";
-import { red, grey } from "@material-ui/core/colors";
 
 export const useStylesASC = makeStyles((theme) => ({
-  root: { height: `calc(100vh - 80px - 148px)`, overflowY: "auto" },
+  root: { height: `calc(100vh - 80px - 132px)`, overflowY: "auto" },
 }));
 
 export const useStylesSC = makeStyles((theme) => ({
@@ -19,20 +18,21 @@ export const useStylesSC = makeStyles((theme) => ({
     height: 440,
   },
   button: {
-    color: grey[50],
+    color: "#f7f7f7",
     width: "100%",
     borderRadius: 6,
+    "&:hover": { backgroundColor: "#0b0e11" },
   },
 }));
 
 export const useStylesSCD = makeStyles((theme) => ({
   dataTitle: {
     width: "30%",
-    borderBlockColor: red[400],
+    borderBlockColor: "#fb8122",
     color: theme.palette.FontColor,
   },
   data: {
-    borderBlockColor: grey[400],
+    borderBlockColor: "#fb8122",
     color: theme.palette.FontColor,
     overflow: "hidden",
   },

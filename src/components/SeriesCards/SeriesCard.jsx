@@ -33,9 +33,8 @@ const SeriesCard = ({ data }) => {
             disableElevation
             variant="contained"
             color="primary"
-            disabled
           >
-            Add to cart
+            Synopsis
           </Button>
           <Button
             className={classes.button}
@@ -43,9 +42,8 @@ const SeriesCard = ({ data }) => {
             disableElevation
             variant="contained"
             color="primary"
-            disabled
           >
-            Buy
+            Watch Online
           </Button>
         </CardActions>
       </Card>

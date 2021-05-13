@@ -7,11 +7,12 @@ import { Toolbar, IconButton, Menu, MenuItem } from "@material-ui/core";
 import { AccountCircle } from "@material-ui/icons";
 import { useAuth } from "../../base/context/AuthContext";
 import ThemeSelector from "./ThemeSelector";
+import { appTitle, login, signup, logout } from "../texts";
 
 const NavBar = () => {
   const classes = useStylesNB();
 
-  const { logout } = useAuth();
+  const { logoutAuth } = useAuth();
 
   const [anchorEl, setAnchorEl] = useState(null);
   const dispatch = useDispatch();
@@ -19,7 +20,7 @@ const NavBar = () => {
 
   const handleLogout = () => {
     try {
-      logout();
+      logoutAuth();
       dispatch(setAccountState({ loggedIn: false }));
       setAnchorEl(null);
     } catch {
@@ -30,7 +31,7 @@ const NavBar = () => {
   return (
     <div>
       <Toolbar className={classes.toolbar}>
-        <p className={classes.title}>Series App</p>
+        <p className={classes.title}>{appTitle}</p>
 
         <IconButton
           className={classes.iconButton}
@@ -50,7 +51,7 @@ const NavBar = () => {
             component={Link}
             onClick={() => setAnchorEl(null)}
           >
-            Login
+            {login}
           </MenuItem>
           <MenuItem
             to="/signup"
@@ -58,11 +59,11 @@ const NavBar = () => {
             component={Link}
             onClick={() => setAnchorEl(null)}
           >
-            Signup
+            {signup}
           </MenuItem>
           {loggedIn && (
             <MenuItem className={classes.menuItems} onClick={handleLogout}>
-              Logout
+              {logout}
             </MenuItem>
           )}
         </Menu>

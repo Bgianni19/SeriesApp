@@ -1,0 +1,15 @@
+export const signup = "Signup";
+export const login = "Login";
+export const logout = "Logout";
+export const needAnAccount = "Need an Account";
+export const alreadyHaveAnAccount = "Already Have an Account?";
+export const forgotPassword = "Forgot Password";
+export const resetPassword = "Reset Password";
+export const appTitle = "Series App";
+export const search = "Search";
+export const synopsis = "Synopsis";
+export const watchOnline = "Watch Online";
+export const title = "Title";
+export const network = "Network";
+export const premiered = "Premiered";
+export const rating = "Rating";

@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 import { Grid, Paper, Button } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useAuth } from "../../base/context/AuthContext";
+import {
+  forgotPassword,
+  resetPassword,
+  alreadyHaveAnAccount,
+  login,
+} from "../texts";
 
 const ForgotPasswordAccount = () => {
   const classes = useStylesA();
@@ -14,7 +20,7 @@ const ForgotPasswordAccount = () => {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
-  const { forgotPassword } = useAuth();
+  const { forgotPasswordAuth } = useAuth();
 
   const handleForgotPassword = async (event) => {
     event.preventDefault();
@@ -41,7 +47,7 @@ const ForgotPasswordAccount = () => {
     >
       <Paper className={classes.paper} elevation={0}>
         <Grid item className={classes.title}>
-          Forgot Password
+          {forgotPassword}
         </Grid>
         <Grid item>
           {error && (
@@ -66,13 +72,13 @@ const ForgotPasswordAccount = () => {
         </Grid>
         <Grid>
           <Button className={classes.button} disabled={loading} type="submit">
-            Reset Password
+            {resetPassword}
           </Button>
         </Grid>
         <Grid item className={classes.createAccount}>
-          Already Have an Account?
+          {alreadyHaveAnAccount}
           <Link className={classes.createAccountLink} to="/login">
-            Log In
+            {login}
           </Link>
         </Grid>
       </Paper>

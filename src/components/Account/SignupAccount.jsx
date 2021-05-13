@@ -6,6 +6,7 @@ import { setAccountState } from "../../actions/accountActions";
 import { Grid, Paper, Button } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import { useAuth } from "../../base/context/AuthContext";
+import { signup, alreadyHaveAnAccount, login } from "../texts";
 
 const LoginAccount = () => {
   const classes = useStylesA();
@@ -20,7 +21,7 @@ const LoginAccount = () => {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const { signup } = useAuth();
+  const { signupAuth } = useAuth();
 
   const handleSignup = async (event) => {
     event.preventDefault();
@@ -52,7 +53,7 @@ const LoginAccount = () => {
     >
       <Paper className={classes.paper} elevation={0}>
         <Grid item className={classes.title}>
-          Sign Up
+          {signup}
         </Grid>
         <Grid item>
           {error && (
@@ -93,13 +94,13 @@ const LoginAccount = () => {
         </Grid>
         <Grid>
           <Button className={classes.button} disabled={loading} type="submit">
-            Signup
+            {signup}
           </Button>
         </Grid>
         <Grid item className={classes.createAccount}>
-          Already Have an Account?
+          {alreadyHaveAnAccount}
           <Link className={classes.createAccountLink} to="/login">
-            Log In
+            {login}
           </Link>
         </Grid>
       </Paper>

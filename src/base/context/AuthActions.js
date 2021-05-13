@@ -1,17 +1,17 @@
 import { auth } from "../base";
 
-export const signup = (email, password) => {
+export const signupAuth = (email, password) => {
   return auth.createUserWithEmailAndPassword(email, password);
 };
 
-export const login = (email, password) => {
+export const loginAuth = (email, password) => {
   return auth.signInWithEmailAndPassword(email, password);
 };
 
-export const logout = () => {
+export const logoutAuth = () => {
   return auth.signOut();
 };
 
-export const forgotPassword = (email) => {
+export const forgotPasswordAuth = (email) => {
   return auth.sendPasswordResetEmail(email);
 };

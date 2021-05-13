@@ -1,10 +1,16 @@
 import { useStylesSCD } from "./styles";
 import { Table, TableBody, TableRow, TableCell } from "@material-ui/core";
+import { title, network, premiered, rating } from "../texts";
 
 const SeriesCardData = ({ data }) => {
   const classes = useStylesSCD();
 
-  const { name, network, premiered, rating } = data;
+  const {
+    name: dataName,
+    network: dataNetwork,
+    premiered: dataPremiered,
+    rating: dataRating,
+  } = data;
 
   return (
     <Table size="small" aria-label="a dense table">
@@ -16,21 +22,10 @@ const SeriesCardData = ({ data }) => {
             align="right"
             scope="row"
           >
-            Title
-          </TableCell>
-          <TableCell className={classes.data}>{name ? name : "-"}</TableCell>
-        </TableRow>
-        <TableRow>
-          <TableCell
-            className={classes.dataTitle}
-            component="th"
-            align="right"
-            scope="row"
-          >
-            Network
+            {title}
           </TableCell>
           <TableCell className={classes.data}>
-            {network ? network.name : "-"}
+            {dataName ? dataName : "-"}
           </TableCell>
         </TableRow>
         <TableRow>
@@ -40,10 +35,10 @@ const SeriesCardData = ({ data }) => {
             align="right"
             scope="row"
           >
-            Premiered
+            {network}
           </TableCell>
           <TableCell className={classes.data}>
-            {premiered ? premiered : "-"}
+            {dataNetwork ? dataNetwork.name : "-"}
           </TableCell>
         </TableRow>
         <TableRow>
@@ -53,10 +48,23 @@ const SeriesCardData = ({ data }) => {
             align="right"
             scope="row"
           >
-            Rating
+            {premiered}
           </TableCell>
           <TableCell className={classes.data}>
-            {rating.average ? rating.average : "-"}
+            {dataPremiered ? dataPremiered : "-"}
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell
+            className={classes.dataTitle}
+            component="th"
+            align="right"
+            scope="row"
+          >
+            {rating}
+          </TableCell>
+          <TableCell className={classes.data}>
+            {dataRating.average ? dataRating.average : "-"}
           </TableCell>
         </TableRow>
       </TableBody>

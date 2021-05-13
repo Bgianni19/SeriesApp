@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setSearchState } from "../../actions/searchActions";
 import { Grid, Button } from "@material-ui/core";
 import { ArrowForward } from "@material-ui/icons";
+import { search } from "../texts";
 
 const Search = () => {
   const classes = useStylesS();
@@ -29,7 +30,7 @@ const Search = () => {
         onChange={(event) => {
           dispatch(setSearchState({ input: event.target.value }));
         }}
-        placeholder="Search"
+        placeholder={search}
       />
       <Button className={classes.button} type="submit">
         <ArrowForward className={classes.buttonIcon} />

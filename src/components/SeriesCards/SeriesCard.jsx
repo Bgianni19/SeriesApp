@@ -9,6 +9,7 @@ import {
   Button,
 } from "@material-ui/core";
 import SeriesCardData from "./SeriesCardData";
+import { synopsis, watchOnline } from "../texts";
 
 const SeriesCard = ({ data }) => {
   const classes = useStylesSC();
@@ -33,7 +34,7 @@ const SeriesCard = ({ data }) => {
             variant="contained"
             color="primary"
           >
-            Synopsis
+            {synopsis}
           </Button>
           <Button
             className={classes.button}
@@ -41,7 +42,7 @@ const SeriesCard = ({ data }) => {
             variant="contained"
             color="primary"
           >
-            Watch Online
+            {watchOnline}
           </Button>
         </CardActions>
       </Card>

@@ -26,7 +26,7 @@ export const SearchInput = withStyles((theme) => ({
     transition: theme.transitions.create(["border-color", "box-shadow"]),
 
     "&:focus": {
-      boxShadow: `${fade("#1d2228", 0.2)} 0 0 0.4rem 0.2rem`,
+      boxShadow: `${fade("#1d2228", 0.2)} 0 0 8px 2px`,
       borderColor: "#1d2228",
     },
   },

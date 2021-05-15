@@ -1,24 +1,24 @@
-import { useStylesA, ForgotPasswordEmail } from "./styles";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Grid, Paper, Button } from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
-import { useAuth } from "../../base/context/AuthContext";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Grid, Paper, Button } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import { useStylesA, ForgotPasswordEmail } from './styles';
+import { useAuth } from '../../base/context/AuthContext';
 import {
   forgotPassword,
   resetPassword,
   alreadyHaveAnAccount,
   login,
-} from "../texts";
+} from '../texts';
 
 const ForgotPasswordAccount = () => {
   const classes = useStylesA();
 
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
 
   const { forgotPasswordAuth } = useAuth();
 
@@ -26,11 +26,11 @@ const ForgotPasswordAccount = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      setError("");
+      setError('');
       await forgotPasswordAuth(email);
-      setMessage("Email sent! Check your inbox.");
+      setMessage('Email sent! Check your inbox.');
     } catch {
-      setError("Failed, please try again!");
+      setError('Failed, please try again!');
     }
     setLoading(false);
   };

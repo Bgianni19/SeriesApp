@@ -1,6 +1,6 @@
-import { SET_SEARCH_STATE } from "../actions/types";
+import { SET_SEARCH_STATE } from '../actions/types';
 
-const initialState = { input: "" };
+const initialState = { input: '' };
 
 const searchReducer = (state = initialState, action) => {
   switch (action.type) {

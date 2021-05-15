@@ -3,16 +3,16 @@ import {
   Switch,
   Route,
   Redirect,
-} from "react-router-dom";
-import { useSelector } from "react-redux";
-import { ThemeProvider } from "@material-ui/core";
-import { AuthProvider } from "./base/context/AuthContext";
-import MainLayout from "./layouts/MainLayout";
-import Home from "./pages/Home";
-import Cards from "./pages/Cards";
-import Login from "./pages/Login";
-import Signup from "./pages/Signup";
-import ForgotPassword from "./pages/ForgotPassword";
+} from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { ThemeProvider } from '@material-ui/core';
+import { AuthProvider } from './base/context/AuthContext';
+import MainLayout from './layouts/MainLayout';
+import Home from './pages/Home';
+import Cards from './pages/Cards';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import ForgotPassword from './pages/ForgotPassword';
 
 function App() {
   const { theme } = useSelector((state) => state.themeReducer);

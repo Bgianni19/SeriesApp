@@ -1,12 +1,12 @@
-import { useStylesA, Email, Password, SignupPassword } from "./styles";
-import { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setAccountState } from "../../actions/accountActions";
-import { Grid, Paper, Button } from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
-import { useAuth } from "../../base/context/AuthContext";
-import { signup, alreadyHaveAnAccount, login } from "../texts";
+import { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Grid, Paper, Button } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import { setAccountState } from '../../actions/accountActions';
+import { useStylesA, Email, Password, SignupPassword } from './styles';
+import { useAuth } from '../../base/context/AuthContext';
+import { signup, alreadyHaveAnAccount, login } from '../texts';
 
 const LoginAccount = () => {
   const classes = useStylesA();
@@ -14,11 +14,11 @@ const LoginAccount = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [email, setEmail] = useState("");
-  const [password_I, setPassword_I] = useState("");
-  const [password_II, setPassword_II] = useState("");
+  const [email, setEmail] = useState('');
+  const [password_I, setPassword_I] = useState('');
+  const [password_II, setPassword_II] = useState('');
 
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
   const { signupAuth } = useAuth();
@@ -27,15 +27,15 @@ const LoginAccount = () => {
     event.preventDefault();
     setLoading(true);
     if (password_I !== password_II) {
-      setError("Passwords do not match!");
+      setError('Passwords do not match!');
     } else {
       try {
-        setError("");
+        setError('');
         await signupAuth(email, password_I);
         dispatch(setAccountState({ loggedIn: true }));
-        history.push("/");
+        history.push('/');
       } catch {
-        setError("Failed to create your account!");
+        setError('Failed to create your account!');
       }
     }
     setLoading(false);

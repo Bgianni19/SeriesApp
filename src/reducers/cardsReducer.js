@@ -1,4 +1,4 @@
-import { SET_CARDS_STATE } from "../actions/types";
+import { SET_CARDS_STATE } from '../actions/types';
 
 const initialState = { cards: [] };
 

@@ -1,11 +1,11 @@
-import { createContext, useContext, useState, useEffect } from "react";
-import { auth } from "../base";
+import { createContext, useContext, useState, useEffect } from 'react';
+import { auth } from '../base';
 import {
   signupAuth,
   loginAuth,
   logoutAuth,
   forgotPasswordAuth,
-} from "./AuthActions";
+} from './AuthActions';
 
 export const AuthContext = createContext();
 

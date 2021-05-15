@@ -1,8 +1,8 @@
-import { combineReducers } from "redux";
-import themeReducer from "./themeReducer";
-import searchReducer from "./searchReducer";
-import cardsReducer from "./cardsReducer";
-import accountReducer from "./accountReducer";
+import { combineReducers } from 'redux';
+import themeReducer from './themeReducer';
+import searchReducer from './searchReducer';
+import cardsReducer from './cardsReducer';
+import accountReducer from './accountReducer';
 
 const reducers = combineReducers({
   themeReducer,

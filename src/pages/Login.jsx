@@ -1,4 +1,4 @@
-import LoginAccount from "../components/Account/LoginAccount";
+import LoginAccount from '../components/Account/LoginAccount';
 
 const Login = () => {
   return <LoginAccount />;

@@ -1,4 +1,4 @@
-import { SET_ACCOUNT_STATE } from "../actions/types";
+import { SET_ACCOUNT_STATE } from '../actions/types';
 
 const initialState = { loggedIn: false };
 

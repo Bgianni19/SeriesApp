@@ -1,4 +1,4 @@
-import { auth } from "../base";
+import { auth } from '../base';
 
 export const signupAuth = (email, password) => {
   return auth.createUserWithEmailAndPassword(email, password);

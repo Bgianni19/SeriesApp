@@ -1,12 +1,12 @@
-import { useStylesA, Email, Password } from "./styles";
-import { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setAccountState } from "../../actions/accountActions";
-import { Grid, Paper, Button } from "@material-ui/core";
-import { Alert } from "@material-ui/lab";
-import { useAuth } from "../../base/context/AuthContext";
-import { login, forgotPassword, needAnAccount, signup } from "../texts";
+import { useState } from 'react';
+import { useHistory, Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { Grid, Paper, Button } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import { setAccountState } from '../../actions/accountActions';
+import { useStylesA, Email, Password } from './styles';
+import { useAuth } from '../../base/context/AuthContext';
+import { login, forgotPassword, needAnAccount, signup } from '../texts';
 
 const LoginAccount = () => {
   const classes = useStylesA();
@@ -14,11 +14,11 @@ const LoginAccount = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [error, setError] = useState('');
 
   const { loginAuth } = useAuth();
 
@@ -26,12 +26,12 @@ const LoginAccount = () => {
     event.preventDefault();
     setLoading(true);
     try {
-      setError("");
+      setError('');
       await loginAuth(email, password);
       dispatch(setAccountState({ loggedIn: true }));
-      history.push("/");
+      history.push('/');
     } catch {
-      setError("Failed to login to your account!");
+      setError('Failed to login to your account!');
     }
     setLoading(false);
   };

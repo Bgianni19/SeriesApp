@@ -1,13 +1,13 @@
-import { useStylesNB } from "./styles";
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { setAccountState } from "../../actions/accountActions";
-import { Toolbar, IconButton, Menu, MenuItem } from "@material-ui/core";
-import { AccountCircle } from "@material-ui/icons";
-import { useAuth } from "../../base/context/AuthContext";
-import ThemeSelector from "./ThemeSelector";
-import { appTitle, login, signup, logout } from "../texts";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Toolbar, IconButton, Menu, MenuItem } from '@material-ui/core';
+import { AccountCircle } from '@material-ui/icons';
+import { setAccountState } from '../../actions/accountActions';
+import { useStylesNB } from './styles';
+import { useAuth } from '../../base/context/AuthContext';
+import ThemeSelector from './ThemeSelector';
+import { appTitle, login, signup, logout } from '../texts';
 
 const NavBar = () => {
   const classes = useStylesNB();
@@ -24,7 +24,8 @@ const NavBar = () => {
       dispatch(setAccountState({ loggedIn: false }));
       setAnchorEl(null);
     } catch {
-      alert("Error!");
+      //! don't use alert. get a notification library or better check the snackbar in materialui
+      // alert('Error!');
     }
   };
 

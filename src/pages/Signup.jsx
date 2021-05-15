@@ -1,4 +1,4 @@
-import SignupAccount from "../components/Account/SignupAccount";
+import SignupAccount from '../components/Account/SignupAccount';
 
 const Signup = () => {
   return <SignupAccount />;

@@ -1,11 +1,11 @@
-import SearchBar from "../components/SearchBar/SearchBar";
-import AllSeriesCards from "../components/SeriesCards/AllSeriesCards";
+import SearchBar from '../components/SearchBar/SearchBar';
+import AllSeriesCards from '../components/SeriesCards/AllSeriesCards';
 
 const Cards = () => {
   return (
     <div>
       <SearchBar />
-      <AllSeriesCards />;
+      <AllSeriesCards />
     </div>
   );
 };

@@ -23,6 +23,19 @@ export const useStylesSC = makeStyles((theme) => ({
     borderRadius: 6,
     "&:hover": { backgroundColor: "#0b0e11" },
   },
+  backdrop: {
+    zIndex: theme.zIndex.drawer + 1,
+    color: "#fff",
+  },
+  paper: {
+    padding: 28,
+    width: "50%",
+    borderRadius: 6,
+    backgroundColor: theme.palette.CardBackgroundColor,
+    color: theme.palette.FontColor,
+  },
+  title: { fontSize: 34, fontWeight: 900 },
+  synopsis: { marginTop: 26, fontSize: 22 },
 }));
 
 export const useStylesSCD = makeStyles((theme) => ({
